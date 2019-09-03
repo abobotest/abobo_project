@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190829 12:02:13.280" rpa="false" generator="Robot 3.1.2 (Python 3.5.3 on win32)">
+<suite name="Test" id="s1" source="D:\abobo_project\robot_project\test">
+<suite name="Test01" id="s1-s1" source="D:\abobo_project\robot_project\test\test01.robot">
+<test name="2" id="s1-s1-t1">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://stg.innisfree.cn/Main.do?ref=2</arg>
+<arg>chrome</arg>
+</arguments>
+<msg level="INFO" timestamp="20190829 12:02:13.555">Opening browser 'chrome' to base url 'https://stg.innisfree.cn/Main.do?ref=2'.</msg>
+<status starttime="20190829 12:02:13.555" status="PASS" endtime="20190829 12:02:19.592"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status starttime="20190829 12:02:19.592" status="PASS" endtime="20190829 12:02:20.716"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<status starttime="20190829 12:02:20.717" status="PASS" endtime="20190829 12:02:20.717"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Screenshot Directory</arg>
+<arg>D:\web_ui\AutoLink\pic</arg>
+</arguments>
+<status starttime="20190829 12:02:20.717" status="PASS" endtime="20190829 12:02:20.717"></status>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<arguments>
+<arg>jietu</arg>
+</arguments>
+<msg level="INFO" timestamp="20190829 12:02:20.818" html="yes">&lt;a href="jietu_1.jpg"&gt;&lt;img src="jietu_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status starttime="20190829 12:02:20.717" status="PASS" endtime="20190829 12:02:20.818"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>xpath=//img[@src='/cn_resources/images/newpc/user.png']</arg>
+</arguments>
+<status starttime="20190829 12:02:20.819" status="PASS" endtime="20190829 12:02:20.819"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>xpath=//*[@id=\"header\"]/div/div[3]/div[3]/div/div/a/span</arg>
+</arguments>
+<status starttime="20190829 12:02:20.819" status="PASS" endtime="20190829 12:02:20.819"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>SeleniumLibrary.Input Text</arg>
+<arg>id=email</arg>
+<arg>18850369373</arg>
+</arguments>
+<status starttime="20190829 12:02:20.820" status="PASS" endtime="20190829 12:02:20.820"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>SeleniumLibrary.Input Text</arg>
+<arg>id=pwd</arg>
+<arg>qwe123</arg>
+</arguments>
+<status starttime="20190829 12:02:20.820" status="PASS" endtime="20190829 12:02:20.820"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>xpath=//img[@src='/cn_resources/images/util/btn_login.gif']</arg>
+</arguments>
+<status starttime="20190829 12:02:20.821" status="PASS" endtime="20190829 12:02:20.821"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Add Image Path</arg>
+<arg>D:\\robot\\test\\img</arg>
+</arguments>
+<status starttime="20190829 12:02:20.822" status="PASS" endtime="20190829 12:02:20.823"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click</arg>
+<arg>9.png</arg>
+</arguments>
+<status starttime="20190829 12:02:20.823" status="PASS" endtime="20190829 12:02:20.824"></status>
+</kw>
+<status critical="yes" starttime="20190829 12:02:13.555" status="PASS" endtime="20190829 12:02:20.824"></status>
+</test>
+<status starttime="20190829 12:02:13.320" status="PASS" endtime="20190829 12:02:20.825"></status>
+</suite>
+<status starttime="20190829 12:02:13.298" status="PASS" endtime="20190829 12:02:20.826"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" name="Test" fail="0" id="s1">Test</stat>
+<stat pass="1" name="Test01" fail="0" id="s1-s1">Test.Test01</stat>
+</suite>
+</statistics>
+<errors>
+<msg level="ERROR" timestamp="20190829 12:02:13.295">Taking listener 'D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py' into use failed: Importing listener 'D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py' failed: Creating instance failed: IndexError: tuple index out of range
+Traceback (most recent call last):
+  File "D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py", line 153, in __init__
+    self.port = int(args[0])</msg>
+</errors>
+</robot>

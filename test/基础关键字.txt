@@ -1,0 +1,7 @@
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Keywords ***
+打开谷歌浏览器
+    [Arguments]    ${arg1}    # URL
+    Open Browser    ${arg1}    chrome

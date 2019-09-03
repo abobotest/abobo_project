@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.5.3 on win32)" generated="20190830 18:14:03.648" rpa="false">
+<suite id="s1" name="Test Project" source="D:\abobo_project\robot_project\test_project">
+<suite id="s1-s1" name="1Innisfree" source="D:\abobo_project\robot_project\test_project\1innisfree.robot">
+<test id="s1-s1-t1" name="0001_order">
+<kw name="登陆innisfree" library="innisfree业务关键字">
+<arguments>
+<arg>${测试环境}</arg>
+<arg>18850369373</arg>
+<arg>qwe123</arg>
+</arguments>
+<kw name="打开浏览器" library="基础关键字">
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20190830 18:14:04.470" level="INFO">Opening browser 'chrome' to base url 'https://stg.innisfree.cn/Main.do?ref=2'.</msg>
+<status status="PASS" endtime="20190830 18:14:13.872" starttime="20190830 18:14:04.470"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:13.872" starttime="20190830 18:14:04.469"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190830 18:14:14.998" starttime="20190830 18:14:13.873"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:15.003" starttime="20190830 18:14:14.998"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Selenium Speed</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:15.003" starttime="20190830 18:14:15.003"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20190830 18:14:17.034" level="INFO">${count} = 0</msg>
+<status status="PASS" endtime="20190830 18:14:17.034" starttime="20190830 18:14:15.004"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:17.034" starttime="20190830 18:14:17.034"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//img[@src='/cn_resources/images/newpc/user.png']</arg>
+</arguments>
+<msg timestamp="20190830 18:14:17.035" level="INFO">Clicking element 'xpath=//img[@src='/cn_resources/images/newpc/user.png']'.</msg>
+<status status="PASS" endtime="20190830 18:14:17.171" starttime="20190830 18:14:17.035"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id=\"header\"]/div/div[3]/div[3]/div/div/a/span</arg>
+</arguments>
+<msg timestamp="20190830 18:14:17.173" level="INFO">Clicking element 'xpath=//*[@id="header"]/div/div[3]/div[3]/div/div/a/span'.</msg>
+<status status="PASS" endtime="20190830 18:14:18.493" starttime="20190830 18:14:17.172"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:18.495" level="INFO">Typing text '18850369373' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20190830 18:14:18.960" starttime="20190830 18:14:18.494"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=pwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:18.961" level="INFO">Typing password into text field 'id=pwd'.</msg>
+<status status="PASS" endtime="20190830 18:14:19.214" starttime="20190830 18:14:18.960"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//img[@src='/cn_resources/images/util/btn_login.gif']</arg>
+</arguments>
+<msg timestamp="20190830 18:14:19.216" level="INFO">Clicking element 'xpath=//img[@src='/cn_resources/images/util/btn_login.gif']'.</msg>
+<status status="PASS" endtime="20190830 18:14:21.032" starttime="20190830 18:14:19.215"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:21.032" starttime="20190830 18:14:04.468"></status>
+</kw>
+<kw name="下单流程" library="innisfree业务关键字">
+<arguments>
+<arg>test</arg>
+</arguments>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20190830 18:14:23.071" level="INFO">${count} = 0</msg>
+<status status="PASS" endtime="20190830 18:14:23.071" starttime="20190830 18:14:21.034"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:23.072" starttime="20190830 18:14:23.071"></status>
+</kw>
+<kw name="等待" library="基础关键字">
+<arguments>
+<arg>1</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:24.076" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190830 18:14:24.077" starttime="20190830 18:14:23.074"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:24.077" starttime="20190830 18:14:23.073"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:24.080" starttime="20190830 18:14:24.078"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="header"]/div/div[1]/ul/li[1]/a/span</arg>
+</arguments>
+<msg timestamp="20190830 18:14:24.082" level="INFO">Clicking element 'xpath=//*[@id="header"]/div/div[1]/ul/li[1]/a/span'.</msg>
+<status status="PASS" endtime="20190830 18:14:26.100" starttime="20190830 18:14:24.081"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>CSS=#UB_TOP &gt; a</arg>
+</arguments>
+<msg timestamp="20190830 18:14:26.102" level="INFO">Clicking element 'CSS=#UB_TOP &gt; a'.</msg>
+<status status="PASS" endtime="20190830 18:14:27.876" starttime="20190830 18:14:26.101"></status>
+</kw>
+<kw name="聚焦" library="基础关键字">
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[1]/span/label</arg>
+</arguments>
+<kw name="Focus" library="SeleniumLibrary">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:28.943" starttime="20190830 18:14:27.878"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:28.944" starttime="20190830 18:14:27.877"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[1]/span/label</arg>
+</arguments>
+<msg timestamp="20190830 18:14:28.946" level="INFO">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[1]/span/label'.</msg>
+<status status="PASS" endtime="20190830 18:14:30.095" starttime="20190830 18:14:28.945"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[2]/span/label</arg>
+</arguments>
+<msg timestamp="20190830 18:14:30.096" level="INFO">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[2]/span/label'.</msg>
+<status status="PASS" endtime="20190830 18:14:31.251" starttime="20190830 18:14:30.095"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[3]/span/label</arg>
+</arguments>
+<msg timestamp="20190830 18:14:31.253" level="INFO">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[3]/span/label'.</msg>
+<status status="PASS" endtime="20190830 18:14:32.418" starttime="20190830 18:14:31.252"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[6]/span/label</arg>
+</arguments>
+<msg timestamp="20190830 18:14:32.419" level="INFO">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[6]/span/label'.</msg>
+<status status="PASS" endtime="20190830 18:14:33.561" starttime="20190830 18:14:32.419"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[4]/a[1]/img</arg>
+</arguments>
+<msg timestamp="20190830 18:14:33.563" level="INFO">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[4]/a[1]/img'.</msg>
+<status status="PASS" endtime="20190830 18:14:34.730" starttime="20190830 18:14:33.562"></status>
+</kw>
+<kw name="聚焦" library="基础关键字">
+<arguments>
+<arg>id=productFilter_search</arg>
+</arguments>
+<kw name="Focus" library="SeleniumLibrary">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:35.797" starttime="20190830 18:14:34.732"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:35.797" starttime="20190830 18:14:34.731"></status>
+</kw>
+<kw name="输入" library="基础关键字">
+<arguments>
+<arg>id=productFilter_search</arg>
+<arg>${输入结果内查找的内容}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:35.800" level="INFO">Typing text 'test' into text field 'id=productFilter_search'.</msg>
+<status status="PASS" endtime="20190830 18:14:37.536" starttime="20190830 18:14:35.800"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:37.536" starttime="20190830 18:14:35.798"></status>
+</kw>
+<kw name="点击元素" library="基础关键字">
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[6]/a/img</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:37.538" level="INFO">Clicking element 'xpath=//*[@id="contents"]/div[6]/a/img'.</msg>
+<status status="PASS" endtime="20190830 18:14:38.732" starttime="20190830 18:14:37.538"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:38.733" starttime="20190830 18:14:37.536"></status>
+</kw>
+<kw name="截图" library="基础关键字">
+<kw name="Take Screenshot" library="Screenshot">
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<arguments>
+<arg>查找结果</arg>
+</arguments>
+<msg timestamp="20190830 18:14:38.884" html="yes" level="INFO">&lt;a href="%E6%9F%A5%E6%89%BE%E7%BB%93%E6%9E%9C_1.jpg"&gt;&lt;img src="%E6%9F%A5%E6%89%BE%E7%BB%93%E6%9E%9C_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190830 18:14:38.884" starttime="20190830 18:14:38.734"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:38.885" starttime="20190830 18:14:38.733"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a</arg>
+<arg>绿茶精萃保湿洁面膏 150ML</arg>
+</arguments>
+<msg timestamp="20190830 18:14:39.957" level="INFO">Element 'xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a' contains text '绿茶精萃保湿洁面膏 150ML'.</msg>
+<status status="PASS" endtime="20190830 18:14:39.957" starttime="20190830 18:14:38.885"></status>
+</kw>
+<kw name="点击元素" library="基础关键字">
+<arguments>
+<arg>xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:39.960" level="INFO">Clicking element 'xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a'.</msg>
+<status status="PASS" endtime="20190830 18:14:41.206" starttime="20190830 18:14:39.959"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:41.207" starttime="20190830 18:14:39.958"></status>
+</kw>
+<kw name="Get Window Titles" library="SeleniumLibrary">
+<doc>Returns and logs titles of all known browser windows.</doc>
+<assign>
+<var>${titles}</var>
+</assign>
+<msg timestamp="20190830 18:14:48.983" level="INFO">Altogether 2 items.
+1: 悦诗风吟护肤品_悦诗风吟护肤系列_悦诗风吟产品类别-(innisfree)悦诗风吟中国官网暨官网商城
+2: 小程序test单品（含赠品）绿茶精萃保湿洁面膏 150ML</msg>
+<msg timestamp="20190830 18:14:48.984" level="INFO">${titles} = ['悦诗风吟护肤品_悦诗风吟护肤系列_悦诗风吟产品类别-(innisfree)悦诗风吟中国官网暨官网商城', '小程序test单品（含赠品）绿茶精萃保湿洁面膏 150ML']</msg>
+<status status="PASS" endtime="20190830 18:14:48.984" starttime="20190830 18:14:41.207"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:48.986" level="INFO">['悦诗风吟护肤品_悦诗风吟护肤系列_悦诗风吟产品类别-(innisfree)悦诗风吟中国官网暨官网商城', '小程序test单品（含赠品）绿茶精萃保湿洁面膏 150ML']</msg>
+<status status="PASS" endtime="20190830 18:14:48.986" starttime="20190830 18:14:48.985"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${titles}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${title1}</var>
+</assign>
+<msg timestamp="20190830 18:14:48.987" level="INFO">${title1} = 悦诗风吟护肤品_悦诗风吟护肤系列_悦诗风吟产品类别-(innisfree)悦诗风吟中国官网暨官网商城</msg>
+<status status="PASS" endtime="20190830 18:14:48.988" starttime="20190830 18:14:48.986"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${titles}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${title2}</var>
+</assign>
+<msg timestamp="20190830 18:14:48.989" level="INFO">${title2} = 小程序test单品（含赠品）绿茶精萃保湿洁面膏 150ML</msg>
+<status status="PASS" endtime="20190830 18:14:48.989" starttime="20190830 18:14:48.988"></status>
+</kw>
+<kw name="Select Window" library="SeleniumLibrary">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>title=${title2}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:55.639" starttime="20190830 18:14:48.990"></status>
+</kw>
+<kw name="聚焦" library="基础关键字">
+<arguments>
+<arg>id=amount</arg>
+</arguments>
+<kw name="Focus" library="SeleniumLibrary">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:56.698" starttime="20190830 18:14:55.642"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:56.699" starttime="20190830 18:14:55.640"></status>
+</kw>
+<kw name="清空默认值" library="基础关键字">
+<arguments>
+<arg>id=amount</arg>
+</arguments>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:14:57.782" starttime="20190830 18:14:56.700"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:57.783" starttime="20190830 18:14:56.699"></status>
+</kw>
+<kw name="输入" library="基础关键字">
+<arguments>
+<arg>id=amount</arg>
+<arg>2</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:57.786" level="INFO">Typing text '2' into text field 'id=amount'.</msg>
+<status status="PASS" endtime="20190830 18:14:59.430" starttime="20190830 18:14:57.785"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:14:59.430" starttime="20190830 18:14:57.783"></status>
+</kw>
+<kw name="点击元素" library="基础关键字">
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[3]/div[2]/div[4]/a[1]/img</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20190830 18:14:59.433" level="INFO">Clicking element 'xpath=//*[@id="contents"]/div[3]/div[2]/div[4]/a[1]/img'.</msg>
+<status status="PASS" endtime="20190830 18:15:00.676" starttime="20190830 18:14:59.432"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:15:00.677" starttime="20190830 18:14:59.431"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>点击元素</arg>
+<arg>xpath=//*[@id="orderForm"]/div[3]/table/tbody/tr[2]/td[5]/div/span[2]/a/img</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:15:00.680" starttime="20190830 18:15:00.678"></status>
+</kw>
+<kw name="聚焦" library="基础关键字">
+<arguments>
+<arg>id=dlvReqCnt</arg>
+</arguments>
+<kw name="Focus" library="SeleniumLibrary">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:15:02.213" starttime="20190830 18:15:00.683"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:15:02.213" starttime="20190830 18:15:00.681"></status>
+</kw>
+<kw name="输入" library="基础关键字">
+<arguments>
+<arg>id=dlvReqCnt</arg>
+<arg>请尽快发货请尽快发货</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20190830 18:15:02.216" level="INFO">Typing text '请尽快发货请尽快发货' into text field 'id=dlvReqCnt'.</msg>
+<status status="PASS" endtime="20190830 18:15:04.033" starttime="20190830 18:15:02.215"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:15:04.034" starttime="20190830 18:15:02.214"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Choose Cancel On Next Confirmation</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:15:04.035" starttime="20190830 18:15:04.034"></status>
+</kw>
+<kw name="点击元素" library="基础关键字">
+<arguments>
+<arg>id=submit_stt</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20190830 18:15:04.037" level="INFO">Clicking element 'id=submit_stt'.</msg>
+<status status="PASS" endtime="20190830 18:15:05.262" starttime="20190830 18:15:04.036"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:15:05.262" starttime="20190830 18:15:04.035"></status>
+</kw>
+<kw name="Confirm Action" library="SeleniumLibrary">
+<doc>Deprecated. Use `Handle Alert` instead.</doc>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg timestamp="20190830 18:15:06.785" level="INFO">${msg} = 请核对地址信息是否正确，确认要提交订单吗？</msg>
+<status status="PASS" endtime="20190830 18:15:06.785" starttime="20190830 18:15:05.263"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<msg timestamp="20190830 18:15:06.787" level="INFO">请核对地址信息是否正确，确认要提交订单吗？</msg>
+<status status="PASS" endtime="20190830 18:15:06.787" starttime="20190830 18:15:06.786"></status>
+</kw>
+<kw name="Confirm Action" library="SeleniumLibrary">
+<doc>Deprecated. Use `Handle Alert` instead.</doc>
+<assign>
+<var>${msg2}</var>
+</assign>
+<msg timestamp="20190830 18:15:08.338" level="INFO">${msg2} = 下订单成功。</msg>
+<status status="PASS" endtime="20190830 18:15:08.338" starttime="20190830 18:15:06.788"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${msg2}</arg>
+<arg>下订单成功。</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:15:08.341" starttime="20190830 18:15:08.339"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:15:08.341" starttime="20190830 18:14:21.033"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:15:08.341" starttime="20190830 18:14:04.467" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="0002_移动端下单(monishouji)">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>deviceName=iPhone 6</arg>
+</arguments>
+<assign>
+<var>${devname}</var>
+</assign>
+<msg timestamp="20190830 18:15:08.354" level="INFO">${devname} = {'deviceName': 'iPhone 6'}</msg>
+<status status="PASS" endtime="20190830 18:15:08.354" starttime="20190830 18:15:08.352"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>mobileEmulation=${devname}</arg>
+</arguments>
+<assign>
+<var>${mobile_emulation}</var>
+</assign>
+<msg timestamp="20190830 18:15:08.356" level="INFO">${mobile_emulation} = {'mobileEmulation': {'deviceName': 'iPhone 6'}}</msg>
+<status status="PASS" endtime="20190830 18:15:08.357" starttime="20190830 18:15:08.355"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver.chrome.options'].Options()</arg>
+<arg>sys, selenium.webdriver.chrome.options</arg>
+</arguments>
+<assign>
+<var>${chromeoptions}</var>
+</assign>
+<msg timestamp="20190830 18:15:08.359" level="INFO">${chromeoptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002787CD24160&gt;</msg>
+<status status="PASS" endtime="20190830 18:15:08.359" starttime="20190830 18:15:08.357"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${mobile_emulation}</arg>
+</arguments>
+<assign>
+<var>${chromeoptions._experimental_options}</var>
+</assign>
+<msg timestamp="20190830 18:15:08.361" level="INFO">${chromeoptions._experimental_options} = {'mobileEmulation': {'deviceName': 'iPhone 6'}}</msg>
+<status status="PASS" endtime="20190830 18:15:08.361" starttime="20190830 18:15:08.360"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${chromeoptions}</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:15:08.363" starttime="20190830 18:15:08.362"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${chromeoptions}</arg>
+</arguments>
+<msg timestamp="20190830 18:15:08.364" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20190830 18:15:13.549" starttime="20190830 18:15:08.363"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>https://stg.innisfree.cn/Main.do?ref=2</arg>
+</arguments>
+<msg timestamp="20190830 18:15:13.550" level="INFO">Opening url 'https://stg.innisfree.cn/Main.do?ref=2'</msg>
+<status status="PASS" endtime="20190830 18:15:16.979" starttime="20190830 18:15:13.549"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>sleep</arg>
+<arg>7</arg>
+</arguments>
+<status status="PASS" endtime="20190830 18:15:16.980" starttime="20190830 18:15:16.979"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/header/div/div[5]/img</arg>
+</arguments>
+<msg timestamp="20190830 18:15:16.981" level="INFO">Clicking element 'xpath=/html/body/header/div/div[5]/img'.</msg>
+<status status="PASS" endtime="20190830 18:15:17.144" starttime="20190830 18:15:16.980"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/section[1]/div[2]/div[1]/div</arg>
+</arguments>
+<msg timestamp="20190830 18:15:17.145" level="INFO">Clicking element 'xpath=/html/body/section[1]/div[2]/div[1]/div'.</msg>
+<status status="PASS" endtime="20190830 18:15:18.214" starttime="20190830 18:15:17.144"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190830 18:15:19.217" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190830 18:15:19.217" starttime="20190830 18:15:18.215"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=u-id</arg>
+<arg>18850369373</arg>
+</arguments>
+<msg timestamp="20190830 18:15:19.218" level="INFO">Typing text '18850369373' into text field 'id=u-id'.</msg>
+<status status="PASS" endtime="20190830 18:15:19.379" starttime="20190830 18:15:19.217"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=u-pw</arg>
+<arg>qwe123</arg>
+</arguments>
+<msg timestamp="20190830 18:15:19.379" level="INFO">Typing password into text field 'id=u-pw'.</msg>
+<status status="PASS" endtime="20190830 18:15:19.519" starttime="20190830 18:15:19.379"></status>
+</kw>
+<status status="PASS" endtime="20190830 18:15:19.520" starttime="20190830 18:15:08.345" critical="yes"></status>
+</test>
+<status status="PASS" endtime="20190830 18:15:19.521" starttime="20190830 18:14:03.791"></status>
+</suite>
+<status status="PASS" endtime="20190830 18:15:19.524" starttime="20190830 18:14:03.726"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" name="Test Project" id="s1">Test Project</stat>
+<stat pass="2" fail="0" name="1Innisfree" id="s1-s1">Test Project.1Innisfree</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20190830 18:14:03.721" level="ERROR">Taking listener 'D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py' into use failed: Importing listener 'D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py' failed: Creating instance failed: IndexError: tuple index out of range
+Traceback (most recent call last):
+  File "D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py", line 153, in __init__
+    self.port = int(args[0])</msg>
+</errors>
+</robot>

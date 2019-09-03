@@ -1,0 +1,15 @@
+#--outputdir
+#D:\abobo_project\robot_project\test\report
+#--variablefile
+#D:\abobo_project\robot_project\test\test1.py
+--listener
+D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py
+-C
+off
+-W
+102
+--Test
+Test.Test01
+--test
+Test.Test01.2
+
