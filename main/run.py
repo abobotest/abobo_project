@@ -11,7 +11,7 @@ if not os.path.exists(report_dir):
     os.makedirs(report_dir)
 
 #执行命令行操作，运行RFS生成测试报告到report_dir，argfile为运行参数可自行根据需求进行修改。
-cmd = 'robot --outputdir '+report_dir+' --argumentfile D:\\abobo_project\\robot_project\\test_project\\argfile.txt D:\\abobo_project\\robot_project\\test_project'
+cmd = 'robot --outputdir '+report_dir+' --argumentfile D:\\abobo_project\\abobo_project\\test_project\\argfile.txt D:\\abobo_project\\abobo_project\\test_project'
 os.system(cmd)
 
 #邮件发送功能

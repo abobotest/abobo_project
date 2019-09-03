@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.5.3 on win32)" generated="20190903 18:13:15.777" rpa="false">
+<suite name="Test Project" id="s1" source="D:\abobo_project\abobo_project\test_project">
+<suite name="Innisfree" id="s1-s1" source="D:\abobo_project\abobo_project\test_project\innisfree.robot">
+<test name="0001_order" id="s1-s1-t1">
+<kw library="innisfree业务关键字" name="登陆innisfree">
+<arguments>
+<arg>${测试环境}</arg>
+<arg>18850369373</arg>
+<arg>qwe123</arg>
+</arguments>
+<kw library="基础关键字" name="打开浏览器">
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Open Browser">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:17.004">Opening browser 'chrome' to base url 'https://stg.innisfree.cn/Main.do?ref=2'.</msg>
+<status starttime="20190903 18:13:17.004" status="PASS" endtime="20190903 18:13:25.462"></status>
+</kw>
+<status starttime="20190903 18:13:17.004" status="PASS" endtime="20190903 18:13:25.462"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<status starttime="20190903 18:13:25.462" status="PASS" endtime="20190903 18:13:26.603"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Set Selenium Implicit Wait">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<status starttime="20190903 18:13:26.603" status="PASS" endtime="20190903 18:13:26.607"></status>
+</kw>
+<kw library="BuiltIn" name="Comment">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Selenium Speed</arg>
+<arg>1</arg>
+</arguments>
+<status starttime="20190903 18:13:26.607" status="PASS" endtime="20190903 18:13:26.607"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Get Element Count">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:13:28.670">${count} = 0</msg>
+<status starttime="20190903 18:13:26.608" status="PASS" endtime="20190903 18:13:28.670"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<status starttime="20190903 18:13:28.670" status="PASS" endtime="20190903 18:13:28.670"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//img[@src='/cn_resources/images/newpc/user.png']</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:28.670">Clicking element 'xpath=//img[@src='/cn_resources/images/newpc/user.png']'.</msg>
+<status starttime="20190903 18:13:28.670" status="PASS" endtime="20190903 18:13:28.774"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id=\"header\"]/div/div[3]/div[3]/div/div/a/span</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:28.775">Clicking element 'xpath=//*[@id="header"]/div/div[3]/div[3]/div/div/a/span'.</msg>
+<status starttime="20190903 18:13:28.775" status="PASS" endtime="20190903 18:13:29.827"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Input Text">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:29.829">Typing text '18850369373' into text field 'id=email'.</msg>
+<status starttime="20190903 18:13:29.828" status="PASS" endtime="20190903 18:13:30.388"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Input Password">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=pwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:30.388">Typing password into text field 'id=pwd'.</msg>
+<status starttime="20190903 18:13:30.388" status="PASS" endtime="20190903 18:13:30.514"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//img[@src='/cn_resources/images/util/btn_login.gif']</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:30.514">Clicking element 'xpath=//img[@src='/cn_resources/images/util/btn_login.gif']'.</msg>
+<status starttime="20190903 18:13:30.514" status="PASS" endtime="20190903 18:13:32.483"></status>
+</kw>
+<status starttime="20190903 18:13:17.004" status="PASS" endtime="20190903 18:13:32.484"></status>
+</kw>
+<kw library="innisfree业务关键字" name="下单流程">
+<arguments>
+<arg>test</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Get Element Count">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:13:34.558">${count} = 0</msg>
+<status starttime="20190903 18:13:32.486" status="PASS" endtime="20190903 18:13:34.558"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//*[@id="wrap"]/div[1]/div[3]/img</arg>
+</arguments>
+<status starttime="20190903 18:13:34.558" status="PASS" endtime="20190903 18:13:34.558"></status>
+</kw>
+<kw library="基础关键字" name="等待">
+<arguments>
+<arg>1</arg>
+</arguments>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:35.561">Slept 1 second</msg>
+<status starttime="20190903 18:13:34.558" status="PASS" endtime="20190903 18:13:35.561"></status>
+</kw>
+<status starttime="20190903 18:13:34.558" status="PASS" endtime="20190903 18:13:35.562"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Set Selenium Speed">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<status starttime="20190903 18:13:35.562" status="PASS" endtime="20190903 18:13:35.562"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="header"]/div/div[1]/ul/li[1]/a/span</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:35.562">Clicking element 'xpath=//*[@id="header"]/div/div[1]/ul/li[1]/a/span'.</msg>
+<status starttime="20190903 18:13:35.562" status="PASS" endtime="20190903 18:13:37.526"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>CSS=#UB_TOP &gt; a</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:37.529">Clicking element 'CSS=#UB_TOP &gt; a'.</msg>
+<status starttime="20190903 18:13:37.527" status="PASS" endtime="20190903 18:13:39.286"></status>
+</kw>
+<kw library="基础关键字" name="聚焦">
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[1]/span/label</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Focus">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:13:39.286" status="PASS" endtime="20190903 18:13:40.356"></status>
+</kw>
+<status starttime="20190903 18:13:39.286" status="PASS" endtime="20190903 18:13:40.356"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[1]/span/label</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:40.356">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[1]/span/label'.</msg>
+<status starttime="20190903 18:13:40.356" status="PASS" endtime="20190903 18:13:41.501"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[2]/span/label</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:41.503">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[2]/span/label'.</msg>
+<status starttime="20190903 18:13:41.502" status="PASS" endtime="20190903 18:13:42.649"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[3]/span/label</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:42.649">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[3]/span/label'.</msg>
+<status starttime="20190903 18:13:42.649" status="PASS" endtime="20190903 18:13:43.810"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[6]/span/label</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:43.810">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[6]/span/label'.</msg>
+<status starttime="20190903 18:13:43.810" status="PASS" endtime="20190903 18:13:44.943"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[5]/div[4]/a[1]/img</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:44.943">Clicking element 'xpath=//*[@id="contents"]/div[5]/div[4]/a[1]/img'.</msg>
+<status starttime="20190903 18:13:44.943" status="PASS" endtime="20190903 18:13:46.088"></status>
+</kw>
+<kw library="基础关键字" name="聚焦">
+<arguments>
+<arg>id=productFilter_search</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Focus">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:13:46.088" status="PASS" endtime="20190903 18:13:47.150"></status>
+</kw>
+<status starttime="20190903 18:13:46.088" status="PASS" endtime="20190903 18:13:47.151"></status>
+</kw>
+<kw library="基础关键字" name="输入">
+<arguments>
+<arg>id=productFilter_search</arg>
+<arg>${输入结果内查找的内容}</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Input Text">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:47.152">Typing text 'test' into text field 'id=productFilter_search'.</msg>
+<status starttime="20190903 18:13:47.152" status="PASS" endtime="20190903 18:13:48.872"></status>
+</kw>
+<status starttime="20190903 18:13:47.151" status="PASS" endtime="20190903 18:13:48.872"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[6]/a/img</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:48.872">Clicking element 'xpath=//*[@id="contents"]/div[6]/a/img'.</msg>
+<status starttime="20190903 18:13:48.872" status="PASS" endtime="20190903 18:13:50.028"></status>
+</kw>
+<status starttime="20190903 18:13:48.872" status="PASS" endtime="20190903 18:13:50.028"></status>
+</kw>
+<kw library="基础关键字" name="截图">
+<kw library="Screenshot" name="Take Screenshot">
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<arguments>
+<arg>查找结果</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:50.191" html="yes">&lt;a href="%E6%9F%A5%E6%89%BE%E7%BB%93%E6%9E%9C_1.jpg"&gt;&lt;img src="%E6%9F%A5%E6%89%BE%E7%BB%93%E6%9E%9C_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status starttime="20190903 18:13:50.028" status="PASS" endtime="20190903 18:13:50.191"></status>
+</kw>
+<status starttime="20190903 18:13:50.028" status="PASS" endtime="20190903 18:13:50.191"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Element Should Contain">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a</arg>
+<arg>绿茶精萃保湿洁面膏 150ML</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:51.264">Element 'xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a' contains text '绿茶精萃保湿洁面膏 150ML'.</msg>
+<status starttime="20190903 18:13:50.191" status="PASS" endtime="20190903 18:13:51.264"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:13:51.264">Clicking element 'xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a'.</msg>
+<status starttime="20190903 18:13:51.264" status="PASS" endtime="20190903 18:13:52.469"></status>
+</kw>
+<status starttime="20190903 18:13:51.264" status="PASS" endtime="20190903 18:13:52.469"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Get Window Titles">
+<doc>Returns and logs titles of all known browser windows.</doc>
+<assign>
+<var>${titles}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:00.282">Altogether 2 items.
+1: 悦诗风吟护肤品_悦诗风吟护肤系列_悦诗风吟产品类别-(innisfree)悦诗风吟中国官网暨官网商城
+2: 小程序test单品（含赠品）绿茶精萃保湿洁面膏 150ML</msg>
+<msg level="INFO" timestamp="20190903 18:14:00.282">${titles} = ['悦诗风吟护肤品_悦诗风吟护肤系列_悦诗风吟产品类别-(innisfree)悦诗风吟中国官网暨官网商城', '小程序test单品（含赠品）绿茶精萃保湿洁面膏 150ML']</msg>
+<status starttime="20190903 18:13:52.470" status="PASS" endtime="20190903 18:14:00.282"></status>
+</kw>
+<kw library="BuiltIn" name="Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${titles}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:00.282">['悦诗风吟护肤品_悦诗风吟护肤系列_悦诗风吟产品类别-(innisfree)悦诗风吟中国官网暨官网商城', '小程序test单品（含赠品）绿茶精萃保湿洁面膏 150ML']</msg>
+<status starttime="20190903 18:14:00.282" status="PASS" endtime="20190903 18:14:00.282"></status>
+</kw>
+<kw library="Collections" name="Get From List">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${titles}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${title1}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:00.286">${title1} = 悦诗风吟护肤品_悦诗风吟护肤系列_悦诗风吟产品类别-(innisfree)悦诗风吟中国官网暨官网商城</msg>
+<status starttime="20190903 18:14:00.282" status="PASS" endtime="20190903 18:14:00.286"></status>
+</kw>
+<kw library="Collections" name="Get From List">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${titles}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${title2}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:00.287">${title2} = 小程序test单品（含赠品）绿茶精萃保湿洁面膏 150ML</msg>
+<status starttime="20190903 18:14:00.286" status="PASS" endtime="20190903 18:14:00.287"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Select Window">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>title=${title2}</arg>
+</arguments>
+<status starttime="20190903 18:14:00.287" status="PASS" endtime="20190903 18:14:06.958"></status>
+</kw>
+<kw library="基础关键字" name="聚焦">
+<arguments>
+<arg>id=amount</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Focus">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:14:06.959" status="PASS" endtime="20190903 18:14:08.019"></status>
+</kw>
+<status starttime="20190903 18:14:06.959" status="PASS" endtime="20190903 18:14:08.019"></status>
+</kw>
+<kw library="基础关键字" name="清空默认值">
+<arguments>
+<arg>id=amount</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Clear Element Text">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:14:08.019" status="PASS" endtime="20190903 18:14:09.094"></status>
+</kw>
+<status starttime="20190903 18:14:08.019" status="PASS" endtime="20190903 18:14:09.094"></status>
+</kw>
+<kw library="基础关键字" name="输入">
+<arguments>
+<arg>id=amount</arg>
+<arg>2</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Input Text">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:09.094">Typing text '2' into text field 'id=amount'.</msg>
+<status starttime="20190903 18:14:09.094" status="PASS" endtime="20190903 18:14:10.725"></status>
+</kw>
+<status starttime="20190903 18:14:09.094" status="PASS" endtime="20190903 18:14:10.726"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>xpath=//*[@id="contents"]/div[3]/div[2]/div[4]/a[1]/img</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:10.728">Clicking element 'xpath=//*[@id="contents"]/div[3]/div[2]/div[4]/a[1]/img'.</msg>
+<status starttime="20190903 18:14:10.727" status="PASS" endtime="20190903 18:14:11.989"></status>
+</kw>
+<status starttime="20190903 18:14:10.726" status="PASS" endtime="20190903 18:14:11.989"></status>
+</kw>
+<kw library="BuiltIn" name="Comment">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>点击元素</arg>
+<arg>xpath=//*[@id="orderForm"]/div[3]/table/tbody/tr[2]/td[5]/div/span[2]/a/img</arg>
+</arguments>
+<status starttime="20190903 18:14:11.989" status="PASS" endtime="20190903 18:14:11.989"></status>
+</kw>
+<kw library="基础关键字" name="聚焦">
+<arguments>
+<arg>id=dlvReqCnt</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Focus">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:14:11.989" status="PASS" endtime="20190903 18:14:13.943"></status>
+</kw>
+<status starttime="20190903 18:14:11.989" status="PASS" endtime="20190903 18:14:13.943"></status>
+</kw>
+<kw library="基础关键字" name="输入">
+<arguments>
+<arg>id=dlvReqCnt</arg>
+<arg>请尽快发货请尽快发货</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Input Text">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:13.943">Typing text '请尽快发货请尽快发货' into text field 'id=dlvReqCnt'.</msg>
+<status starttime="20190903 18:14:13.943" status="PASS" endtime="20190903 18:14:15.759"></status>
+</kw>
+<status starttime="20190903 18:14:13.943" status="PASS" endtime="20190903 18:14:15.759"></status>
+</kw>
+<kw library="BuiltIn" name="Comment">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Choose Cancel On Next Confirmation</arg>
+</arguments>
+<status starttime="20190903 18:14:15.759" status="PASS" endtime="20190903 18:14:15.759"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>id=submit_stt</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:15.763">Clicking element 'id=submit_stt'.</msg>
+<status starttime="20190903 18:14:15.759" status="PASS" endtime="20190903 18:14:17.009"></status>
+</kw>
+<status starttime="20190903 18:14:15.759" status="PASS" endtime="20190903 18:14:17.009"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Confirm Action">
+<doc>Deprecated. Use `Handle Alert` instead.</doc>
+<assign>
+<var>${msg}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:18.531">${msg} = 请核对地址信息是否正确，确认要提交订单吗？</msg>
+<status starttime="20190903 18:14:17.010" status="PASS" endtime="20190903 18:14:18.532"></status>
+</kw>
+<kw library="BuiltIn" name="Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${msg}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:18.534">请核对地址信息是否正确，确认要提交订单吗？</msg>
+<status starttime="20190903 18:14:18.532" status="PASS" endtime="20190903 18:14:18.535"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Confirm Action">
+<doc>Deprecated. Use `Handle Alert` instead.</doc>
+<assign>
+<var>${msg2}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:20.266">${msg2} = 下订单成功。</msg>
+<status starttime="20190903 18:14:18.535" status="PASS" endtime="20190903 18:14:20.266"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${msg2}</arg>
+<arg>下订单成功。</arg>
+</arguments>
+<status starttime="20190903 18:14:20.266" status="PASS" endtime="20190903 18:14:20.266"></status>
+</kw>
+<status starttime="20190903 18:13:32.484" status="PASS" endtime="20190903 18:14:20.266"></status>
+</kw>
+<status starttime="20190903 18:13:17.004" status="PASS" critical="yes" endtime="20190903 18:14:20.266"></status>
+</test>
+<test name="0002_移动端下单(monishouji)" id="s1-s1-t2">
+<kw library="innisfree业务关键字" name="移动端登陆innisfree">
+<arguments>
+<arg>${测试环境}</arg>
+<arg>18850369373</arg>
+<arg>qwe123</arg>
+</arguments>
+<kw library="BuiltIn" name="Create Dictionary">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>deviceName=iPhone 6</arg>
+</arguments>
+<assign>
+<var>${devname}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:20.276">${devname} = {'deviceName': 'iPhone 6'}</msg>
+<status starttime="20190903 18:14:20.276" status="PASS" endtime="20190903 18:14:20.276"></status>
+</kw>
+<kw library="BuiltIn" name="Create Dictionary">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>mobileEmulation=${devname}</arg>
+</arguments>
+<assign>
+<var>${mobile_emulation}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:20.281">${mobile_emulation} = {'mobileEmulation': {'deviceName': 'iPhone 6'}}</msg>
+<status starttime="20190903 18:14:20.276" status="PASS" endtime="20190903 18:14:20.281"></status>
+</kw>
+<kw library="BuiltIn" name="Evaluate">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver.chrome.options'].Options()</arg>
+<arg>sys, selenium.webdriver.chrome.options</arg>
+</arguments>
+<assign>
+<var>${chromeoptions}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:20.282">${chromeoptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000027BE9FEF390&gt;</msg>
+<status starttime="20190903 18:14:20.282" status="PASS" endtime="20190903 18:14:20.282"></status>
+</kw>
+<kw library="BuiltIn" name="Set Variable">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${mobile_emulation}</arg>
+</arguments>
+<assign>
+<var>${chromeoptions._experimental_options}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:20.282">${chromeoptions._experimental_options} = {'mobileEmulation': {'deviceName': 'iPhone 6'}}</msg>
+<status starttime="20190903 18:14:20.282" status="PASS" endtime="20190903 18:14:20.282"></status>
+</kw>
+<kw library="BuiltIn" name="Comment">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>log</arg>
+<arg>${chromeoptions}</arg>
+</arguments>
+<status starttime="20190903 18:14:20.282" status="PASS" endtime="20190903 18:14:20.286"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Create Webdriver">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${chromeoptions}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:20.288">Creating an instance of the Chrome WebDriver.</msg>
+<status starttime="20190903 18:14:20.286" status="PASS" endtime="20190903 18:14:25.504"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Go To">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:25.506">Opening url 'https://stg.innisfree.cn/Main.do?ref=2'</msg>
+<status starttime="20190903 18:14:25.505" status="PASS" endtime="20190903 18:14:28.830"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Set Selenium Implicit Wait">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status starttime="20190903 18:14:28.831" status="PASS" endtime="20190903 18:14:29.335"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/header/div/div[5]/img</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:29.339">Clicking element 'xpath=/html/body/header/div/div[5]/img'.</msg>
+<status starttime="20190903 18:14:29.339" status="PASS" endtime="20190903 18:14:29.503"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/section[1]/div[2]/div[1]/div</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:29.504">Clicking element 'xpath=/html/body/section[1]/div[2]/div[1]/div'.</msg>
+<status starttime="20190903 18:14:29.503" status="PASS" endtime="20190903 18:14:30.789"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:31.792">Slept 1 second</msg>
+<status starttime="20190903 18:14:30.790" status="PASS" endtime="20190903 18:14:31.792"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Input Text">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=u-id</arg>
+<arg>${username}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:31.792">Typing text '18850369373' into text field 'id=u-id'.</msg>
+<status starttime="20190903 18:14:31.792" status="PASS" endtime="20190903 18:14:31.993"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Input Password">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=u-pw</arg>
+<arg>${password}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:31.994">Typing password into text field 'id=u-pw'.</msg>
+<status starttime="20190903 18:14:31.993" status="PASS" endtime="20190903 18:14:32.222"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="loginFrm"]/div/div[1]/span/a</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:32.222">Clicking element 'xpath=//*[@id="loginFrm"]/div/div[1]/span/a'.</msg>
+<status starttime="20190903 18:14:32.222" status="PASS" endtime="20190903 18:14:35.138"></status>
+</kw>
+<status starttime="20190903 18:14:20.275" status="PASS" endtime="20190903 18:14:35.138"></status>
+</kw>
+<kw library="innisfree业务关键字" name="移动端下单演示">
+<kw library="SeleniumLibrary" name="Set Selenium Speed">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.6</arg>
+</arguments>
+<status starttime="20190903 18:14:35.138" status="PASS" endtime="20190903 18:14:35.138"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>xpath=//img[@src='/cn_resources/mobile/images/main/menu.png']</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:35.142">Clicking element 'xpath=//img[@src='/cn_resources/mobile/images/main/menu.png']'.</msg>
+<status starttime="20190903 18:14:35.142" status="PASS" endtime="20190903 18:14:36.511"></status>
+</kw>
+<status starttime="20190903 18:14:35.142" status="PASS" endtime="20190903 18:14:36.511"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>xpath=//*[@id=\"wrap\"]/section/div/ul/li/span</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:36.511">Clicking element 'xpath=//*[@id="wrap"]/section/div/ul/li/span'.</msg>
+<status starttime="20190903 18:14:36.511" status="PASS" endtime="20190903 18:14:37.835"></status>
+</kw>
+<status starttime="20190903 18:14:36.511" status="PASS" endtime="20190903 18:14:37.835"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>xpath=//*[@id=\"wrap\"]/section/div/ul/li/ul/li[2]/span</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:37.837">Clicking element 'xpath=//*[@id="wrap"]/section/div/ul/li/ul/li[2]/span'.</msg>
+<status starttime="20190903 18:14:37.837" status="PASS" endtime="20190903 18:14:39.145"></status>
+</kw>
+<status starttime="20190903 18:14:37.836" status="PASS" endtime="20190903 18:14:39.145"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>xpath=//*[@id=\"wrap\"]/section/div/ul/li/ul/li[2]/ul/li[16]/a/span</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:39.148">Clicking element 'xpath=//*[@id="wrap"]/section/div/ul/li/ul/li[2]/ul/li[16]/a/span'.</msg>
+<status starttime="20190903 18:14:39.148" status="PASS" endtime="20190903 18:14:42.083"></status>
+</kw>
+<status starttime="20190903 18:14:39.145" status="PASS" endtime="20190903 18:14:42.084"></status>
+</kw>
+<kw library="基础关键字" name="聚焦">
+<arguments>
+<arg>xpath=//*[@id="productListSub"]/div[1]/div[3]/a/span[3]</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Focus">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:14:42.085" status="PASS" endtime="20190903 18:14:43.334"></status>
+</kw>
+<status starttime="20190903 18:14:42.084" status="PASS" endtime="20190903 18:14:43.334"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Get Text">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="productListSub"]/div[1]/div[3]/a/span[3]</arg>
+</arguments>
+<assign>
+<var>${a}</var>
+</assign>
+<msg level="INFO" timestamp="20190903 18:14:44.607">${a} = 橄榄油肤质提升菁华乳 9月新品</msg>
+<status starttime="20190903 18:14:43.334" status="PASS" endtime="20190903 18:14:44.608"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>xpath=//*[@id="productListSub"]/div[1]/div[3]/a/span[3]</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:44.613">Clicking element 'xpath=//*[@id="productListSub"]/div[1]/div[3]/a/span[3]'.</msg>
+<status starttime="20190903 18:14:44.612" status="PASS" endtime="20190903 18:14:47.844"></status>
+</kw>
+<status starttime="20190903 18:14:44.609" status="PASS" endtime="20190903 18:14:47.845"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Page Should Contain">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>橄榄油肤质提升菁华乳</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:49.108">Current page contains text '橄榄油肤质提升菁华乳'.</msg>
+<status starttime="20190903 18:14:47.845" status="PASS" endtime="20190903 18:14:49.108"></status>
+</kw>
+<kw library="基础关键字" name="等待">
+<arguments>
+<arg>1</arg>
+</arguments>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:50.114">Slept 1 second</msg>
+<status starttime="20190903 18:14:49.109" status="PASS" endtime="20190903 18:14:50.114"></status>
+</kw>
+<status starttime="20190903 18:14:49.109" status="PASS" endtime="20190903 18:14:50.114"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Set Focus To Element">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="container"]/div/div[3]/div[1]/span[1]</arg>
+</arguments>
+<status starttime="20190903 18:14:50.114" status="PASS" endtime="20190903 18:14:51.371"></status>
+</kw>
+<kw library="BuiltIn" name="Comment">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>聚焦</arg>
+<arg>//*[@id="container"]/div/div[3]/div[1]/span[1]</arg>
+</arguments>
+<status starttime="20190903 18:14:51.371" status="PASS" endtime="20190903 18:14:51.371"></status>
+</kw>
+<kw library="SeleniumLibrary" name="Wait Until Element Is Visible">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="container"]/div/div[3]/div[1]/span[2]/span/input</arg>
+</arguments>
+<status starttime="20190903 18:14:51.371" status="PASS" endtime="20190903 18:14:52.642"></status>
+</kw>
+<kw library="基础关键字" name="清空默认值">
+<arguments>
+<arg>xpath=//*[@id="container"]/div/div[3]/div[1]/span[2]/span/input</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Clear Element Text">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:14:52.642" status="PASS" endtime="20190903 18:14:53.923"></status>
+</kw>
+<status starttime="20190903 18:14:52.642" status="PASS" endtime="20190903 18:14:53.923"></status>
+</kw>
+<kw library="基础关键字" name="输入">
+<arguments>
+<arg>xpath=//*[@id="container"]/div/div[3]/div[1]/span[2]/span/input</arg>
+<arg>2</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Input Text">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:53.923">Typing text '2' into text field 'xpath=//*[@id="container"]/div/div[3]/div[1]/span[2]/span/input'.</msg>
+<status starttime="20190903 18:14:53.923" status="PASS" endtime="20190903 18:14:55.862"></status>
+</kw>
+<status starttime="20190903 18:14:53.923" status="PASS" endtime="20190903 18:14:55.862"></status>
+</kw>
+<kw library="基础关键字" name="聚焦">
+<arguments>
+<arg>id=footer</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Focus">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:14:55.862" status="PASS" endtime="20190903 18:14:57.116"></status>
+</kw>
+<status starttime="20190903 18:14:55.862" status="PASS" endtime="20190903 18:14:57.116"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>id=footer</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:57.120">Clicking element 'id=footer'.</msg>
+<status starttime="20190903 18:14:57.116" status="PASS" endtime="20190903 18:14:58.484"></status>
+</kw>
+<status starttime="20190903 18:14:57.116" status="PASS" endtime="20190903 18:14:58.485"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>CSS=#container &gt; div &gt; div.btnFixed &gt; div &gt; span:nth-child(1) &gt; a</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:14:58.486">Clicking element 'CSS=#container &gt; div &gt; div.btnFixed &gt; div &gt; span:nth-child(1) &gt; a'.</msg>
+<status starttime="20190903 18:14:58.486" status="PASS" endtime="20190903 18:14:59.866"></status>
+</kw>
+<status starttime="20190903 18:14:58.485" status="PASS" endtime="20190903 18:14:59.867"></status>
+</kw>
+<kw library="基础关键字" name="聚焦">
+<arguments>
+<arg>id=dlvReqCnt</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Focus">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:14:59.868" status="PASS" endtime="20190903 18:15:02.422"></status>
+</kw>
+<status starttime="20190903 18:14:59.867" status="PASS" endtime="20190903 18:15:02.423"></status>
+</kw>
+<kw library="基础关键字" name="输入">
+<arguments>
+<arg>id=dlvReqCnt</arg>
+<arg>填写留言内容填写留言内容</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Input Text">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:15:02.425">Typing text '填写留言内容填写留言内容' into text field 'id=dlvReqCnt'.</msg>
+<status starttime="20190903 18:15:02.424" status="PASS" endtime="20190903 18:15:04.566"></status>
+</kw>
+<status starttime="20190903 18:15:02.423" status="PASS" endtime="20190903 18:15:04.566"></status>
+</kw>
+<kw library="基础关键字" name="聚焦">
+<arguments>
+<arg>identifier=submit_stt</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Focus">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status starttime="20190903 18:15:04.566" status="PASS" endtime="20190903 18:15:11.489"></status>
+</kw>
+<status starttime="20190903 18:15:04.566" status="PASS" endtime="20190903 18:15:11.489"></status>
+</kw>
+<kw library="基础关键字" name="点击元素">
+<arguments>
+<arg>identifier=submit_stt</arg>
+</arguments>
+<kw library="SeleniumLibrary" name="Click Element">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg level="INFO" timestamp="20190903 18:15:11.489">Clicking element 'identifier=submit_stt'.</msg>
+<status starttime="20190903 18:15:11.489" status="PASS" endtime="20190903 18:15:18.517"></status>
+</kw>
+<status starttime="20190903 18:15:11.489" status="PASS" endtime="20190903 18:15:18.517"></status>
+</kw>
+<status starttime="20190903 18:14:35.138" status="PASS" endtime="20190903 18:15:18.517"></status>
+</kw>
+<status starttime="20190903 18:14:20.272" status="PASS" critical="yes" endtime="20190903 18:15:18.517"></status>
+</test>
+<status starttime="20190903 18:13:15.926" status="PASS" endtime="20190903 18:15:18.520"></status>
+</suite>
+<status starttime="20190903 18:13:15.859" status="PASS" endtime="20190903 18:15:18.526"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" name="Test Project" id="s1" fail="0">Test Project</stat>
+<stat pass="2" name="Innisfree" id="s1-s1" fail="0">Test Project.Innisfree</stat>
+</suite>
+</statistics>
+<errors>
+<msg level="ERROR" timestamp="20190903 18:13:15.849">Taking listener 'D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py' into use failed: Importing listener 'D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py' failed: Creating instance failed: IndexError: tuple index out of range
+Traceback (most recent call last):
+  File "D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py", line 153, in __init__
+    self.port = int(args[0])</msg>
+</errors>
+</robot>
