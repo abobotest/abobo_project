@@ -1,0 +1,7 @@
+# Python3.5.3 or above is recommended
+robotframework==3.1.2
+robotframework-seleniumlibrary==3.1.1
+robotframework-selenium2library==3.0.0
+wxPython==4.0.6
+robotframework-ride==1.7.3.1
+

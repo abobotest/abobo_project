@@ -1,0 +1,17 @@
+# coding=utf-8
+[EMAIL]
+# 是否发送邮件
+sendEmail = False
+# 邮件主题
+sub = 自动化测试
+# 邮件内容
+content = 这是第一轮测试邮件
+
+
+[PROJECT]
+# 项目路径
+projectDir = D:\abobo_project\abobo_project
+#RFS执行的配置文件
+innisfree_argfile = D:\abobo_project\abobo_project\data\innisfree_argfile.txt
+#悦诗风吟的RFS项目目录
+innisfree_projectDir = D:\abobo_project\abobo_project\innisfree_project
