@@ -13,4 +13,3 @@ if exist %pypath% (
     python runtest.py
 )
 echo *************************【自动化案例构建结束】***********************
-pause

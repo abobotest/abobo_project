@@ -18,24 +18,26 @@ sub = my_config.sub
 content = my_config.content
 innisfree_argfile_path = my_config.innisfree_argfile
 innisfree_projectDir_path = my_config.innisfree_projectDir
+rootPath=my_config.projectDir
 
 
 
 
-#测试报告输出
-base_dir = '../reports'
-now=time.strftime('%Y-%m-%d %H_%M_%S')
-report_dir=base_dir+'/'+now+' 自动化测试报告'
-report_dir=report_dir.replace(" ","_")
-if not os.path.exists(report_dir):
-    os.makedirs(report_dir)
+#测试报告输出,按时间生成不同文件夹测试报告
+# base_dir = rootPath+'/reports'
+# now=time.strftime('%Y-%m-%d %H_%M_%S')
+# report_dir=base_dir+'/'+now+' 自动化测试报告'
+# report_dir=report_dir.replace(" ","_")
+# if not os.path.exists(report_dir):
+#     os.makedirs(report_dir)
 
-
-
+#如果在jenkins上执行，需要固定的目录
+report_dir = rootPath + '/reports/test'
 
 #执行命令行操作，运行RFS生成测试报告到report_dir，argfile为运行参数可自行根据需求进行修改。
 cmd = 'robot --outputdir '+report_dir+' --argumentfile '+innisfree_argfile_path+' '+innisfree_projectDir_path
 os.system(cmd)
+
 
 # #邮件发送功能
 if sendEmail.lower() == "true":

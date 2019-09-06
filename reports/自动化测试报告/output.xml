@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190905 22:42:47.929" generator="Robot 3.1.2 (Python 3.5.3 on win32)">
+<suite source="D:\abobo_project\abobo_project\innisfree_project" name="Innisfree Project" id="s1">
+<suite source="D:\abobo_project\abobo_project\innisfree_project\innisfree.robot" name="Innisfree" id="s1-s1">
+<test name="0001_order" id="s1-s1-t1">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>登陆innisfree</arg>
+<arg>${测试环境}</arg>
+<arg>18850369373</arg>
+<arg>qwe123</arg>
+</arguments>
+<status starttime="20190905 22:42:48.689" endtime="20190905 22:42:48.689" status="PASS"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>下单流程</arg>
+<arg>test</arg>
+</arguments>
+<status starttime="20190905 22:42:48.689" endtime="20190905 22:42:48.690" status="PASS"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>abobo</arg>
+</arguments>
+<msg level="INFO" timestamp="20190905 22:42:48.691">abobo</msg>
+<status starttime="20190905 22:42:48.690" endtime="20190905 22:42:48.691" status="PASS"></status>
+</kw>
+<status starttime="20190905 22:42:48.687" endtime="20190905 22:42:48.691" status="PASS" critical="yes"></status>
+</test>
+<test name="0002_移动端下单(monishouji)" id="s1-s1-t2">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>移动端登陆innisfree</arg>
+<arg>${测试环境}</arg>
+<arg>18850369373</arg>
+<arg>qwe123</arg>
+</arguments>
+<status starttime="20190905 22:42:48.695" endtime="20190905 22:42:48.696" status="PASS"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>移动端下单演示</arg>
+</arguments>
+<status starttime="20190905 22:42:48.696" endtime="20190905 22:42:48.697" status="PASS"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>gaga</arg>
+</arguments>
+<msg level="INFO" timestamp="20190905 22:42:48.698">gaga</msg>
+<status starttime="20190905 22:42:48.697" endtime="20190905 22:42:48.698" status="PASS"></status>
+</kw>
+<status starttime="20190905 22:42:48.692" endtime="20190905 22:42:48.699" status="PASS" critical="yes"></status>
+</test>
+<status starttime="20190905 22:42:48.045" endtime="20190905 22:42:48.700" status="PASS"></status>
+</suite>
+<status starttime="20190905 22:42:47.977" endtime="20190905 22:42:48.702" status="PASS"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" name="Innisfree Project" id="s1" fail="0">Innisfree Project</stat>
+<stat pass="2" name="Innisfree" id="s1-s1" fail="0">Innisfree Project.Innisfree</stat>
+</suite>
+</statistics>
+<errors>
+<msg level="ERROR" timestamp="20190905 22:42:47.973">Taking listener 'D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py' into use failed: Importing listener 'D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py' failed: Creating instance failed: IndexError: tuple index out of range
+Traceback (most recent call last):
+  File "D:\abobo_project\robot_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py", line 153, in __init__
+    self.port = int(args[0])</msg>
+</errors>
+</robot>

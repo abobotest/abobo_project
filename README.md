@@ -9,7 +9,7 @@
     6. reports: 测试报告以及测试LOG存放的目录
     7. util: 工具类
     8、driver: 浏览器驱动
-    9. venv: python虚拟环境
+    9. venv: python虚拟环境，自己新建
     10. runtest.bat: 启动并执行案例(执行runtest.py)
     11. 启动robotframework_IDE.bat: RFS的IDE，用于编写测试用例
     12. requirements.txt: 依赖第三方库明细
@@ -24,7 +24,7 @@
     2、运行测试用例，可在IDE里选择以及执行测试用例，界面上操作会比较直观，也可执行项目目录下的runtest.bat脚本
     执行(建议此方式执行)，运行参数在data目录下可自行调整（RFS的使用可参考其官方文档）。
     
-    3、本目录生成的测试报告在reports下，执行runtest.bat脚本可结合jenkins进行持续集成。
+    3、本目录生成的测试报告在reports下，执行runtest.bat脚本可结合jenkins进行持续集成，jenkins安装Robot Framework plugin插件。
     
-    4、浏览器驱动需存放在系统环境变量目录下， 本人使用的驱动为(Session info: chrome=76.0.3809.132)
+    4、浏览器驱动目录需存放在系统环境变量下， 本人使用的驱动为(Session info: chrome=76.0.3809.132)
     (Driver info: chromedriver=2.38.552522

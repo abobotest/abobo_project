@@ -43,6 +43,7 @@ Resource          基础关键字.txt
     log    ${msg}
     ${msg2}    Confirm Action
     Should Be Equal    ${msg2}    下订单成功。
+    Comment    Close Window
 
 登陆innisfree
     [Arguments]    ${url}    ${username}    ${password}
@@ -68,6 +69,10 @@ Resource          基础关键字.txt
     Create Webdriver    Chrome    chrome_options=${chromeoptions}
     Go To    ${url}
     Set Selenium Implicit Wait    5
+    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
+    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
+    Set Selenium Speed    0.5
+    Sleep    3
     Click Element    xpath=/html/body/header/div/div[5]/img
     Click Element    xpath=/html/body/section[1]/div[2]/div[1]/div
     sleep    1
@@ -77,6 +82,8 @@ Resource          基础关键字.txt
 
 移动端下单演示
     Set Selenium Speed    0.6
+    Comment    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
+    Comment    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
     点击元素    xpath=//img[@src='/cn_resources/mobile/images/main/menu.png']    #点击左上脚菜单
     点击元素    xpath=//*[@id=\"wrap\"]/section/div/ul/li/span    #点击购物
     点击元素    xpath=//*[@id=\"wrap\"]/section/div/ul/li/ul/li[2]/span    #点击护肤系列
@@ -98,3 +105,4 @@ Resource          基础关键字.txt
     输入    id=dlvReqCnt    填写留言内容填写留言内容
     聚焦    identifier=submit_stt
     点击元素    identifier=submit_stt
+    Comment    关闭浏览器
