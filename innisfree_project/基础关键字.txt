@@ -36,3 +36,12 @@ Library           Collections
 清空默认值
     [Arguments]    ${locator}
     Clear Element Text    ${locator}
+
+设置执行速度
+    [Arguments]    ${time}
+    [Documentation]    每个步骤的间隔时间，减慢执行速度，延缓元素的加载时间
+    ...    参数${time}为时间
+    Set Selenium Speed    ${time}
+
+刷新页面
+    Execute Javascript    window.location.reload();

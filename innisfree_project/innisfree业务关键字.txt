@@ -7,8 +7,9 @@ Resource          基础关键字.txt
 *** Keywords ***
 下单流程
     [Arguments]    ${输入结果内查找的内容}
-    ${count}    Get Element Count    xpath=//*[@id="wrap"]/div[1]/div[3]/img
-    Run Keyword If    ${count}    Click Element    xpath=//*[@id="wrap"]/div[1]/div[3]/img
+    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
+    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
+    ...    ELSE IF    log    不存在提示信息
     等待    1
     Set Selenium Speed    0.5
     Click Element    xpath=//*[@id="header"]/div/div[1]/ul/li[1]/a/span    #点击购物
@@ -48,16 +49,14 @@ Resource          基础关键字.txt
 登陆innisfree
     [Arguments]    ${url}    ${username}    ${password}
     打开浏览器    ${url}
-    Maximize Browser Window
-    Set Selenium Implicit Wait    2
-    Comment    Set Selenium Speed    1
-    ${count}    Get Element Count    xpath=//*[@id="wrap"]/div[1]/div[3]/img
-    Run Keyword If    ${count}    Click Element    xpath=//*[@id="wrap"]/div[1]/div[3]/img
-    Click Element    xpath=//img[@src='/cn_resources/images/newpc/user.png']
-    Click Element    xpath=//*[@id=\"header\"]/div/div[3]/div[3]/div/div/a/span
-    Input Text    id=email    ${username}
-    Input Password    id=pwd    ${password}
-    Click Element    xpath=//img[@src='/cn_resources/images/util/btn_login.gif']
+    浏览器最大化
+    Set Selenium Implicit Wait    5
+    关闭页面提示信息
+    点击元素    class=login    #点击登陆图标
+    点击元素    link=登录
+    输入    id=email    ${username}
+    输入    id=pwd    ${password}
+    点击元素    css=#login > img
 
 移动端登陆innisfree
     [Arguments]    ${url}    ${username}    ${password}
@@ -106,3 +105,63 @@ Resource          基础关键字.txt
     聚焦    identifier=submit_stt
     点击元素    identifier=submit_stt
     Comment    关闭浏览器
+
+清空购物车
+    设置执行速度    0.5
+    点击元素    class=cart
+    点击元素    xpath=//span[contains(text(),'清空')]
+    ${price}    Get Text    class=cart_allPrice
+    Should Be Equal As Strings    ${price}    总计/￥0
+    点击元素    class=close_cart
+
+PC端下单流程
+    [Arguments]    ${输入结果内查找的内容}
+    关闭页面提示信息
+    等待    1
+    设置执行速度    0.5
+    点击元素    partial link=购物    #点击购物
+    点击元素    partial link=洁面与卸妆    #点击洁面与卸妆
+    聚焦    xpath=//*[text()='补水保湿' and @class='label']
+    点击元素    xpath=//*[text()='补水保湿' and @class='label']    #选择补水保湿
+    点击元素    xpath=//*[text()='毛孔管理' and @class='label']    #毛孔管理
+    点击元素    xpath=//*[text()='舒缓修护' and @class='label']    #舒缓修护
+    点击元素    xpath=//*[text()='弹性紧致' and @class='label']    #弹性紧致
+    点击元素    xpath=//img[@alt='按条件搜索']    #点击按条件搜索
+    聚焦    id=productFilter_search
+    输入    id=productFilter_search    ${输入结果内查找的内容}
+    点击元素    xpath=//img[@alt='搜索']    #结果中搜索
+    截图
+    Element Should Contain    partial link=小程序test单品（含赠品）绿茶精萃保湿洁面膏    绿茶精萃保湿洁面膏
+    点击元素    partial link=小程序test单品（含赠品）绿茶精萃保湿洁面膏    #点击上述商品进入购买界面
+    ${titles}    Get Window Titles    #切换页面
+    log    ${titles}
+    ${title1}    Get From List    ${titles}    0
+    ${title2}    Get From List    ${titles}    1
+    Select Window    title=${title2}
+    聚焦    id=amount
+    清空默认值    id=amount
+    输入    id=amount    2    #输入商品数量
+    点击元素    xpath=//img[@alt='立即购买']    #点击立即购买
+    聚焦    id=dlvReqCnt
+    输入    id=dlvReqCnt    请尽快发货请尽快发货    #填写留言
+    Comment    Choose Cancel On Next Confirmation
+    点击元素    id=submit_stt    #提交定单
+    ${msg}    Confirm Action
+    log    ${msg}
+    ${msg2}    Confirm Action
+    Should Be Equal    ${msg2}    下订单成功。
+    Comment    Close Window
+
+获取我的订单中各类型订单总数
+    [Arguments]    ${locator}    # 各类型订单数值的定位方式
+    点击元素    class=user_name
+    点击元素    xpath=//img[@alt='我的订单']
+    Comment    Select From List By Value    id=selectboxSearch    21    #选择等待付款
+    ${order_text}    Get Text    ${locator}
+    ${order_number_list}    Evaluate    re.findall('\\d+','${order_text}')    re
+    ${order_number}    Evaluate    int(${order_number_list[0]})
+    [Return]    ${order_number}    # 类型为整型
+
+关闭页面提示信息
+    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
+    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
