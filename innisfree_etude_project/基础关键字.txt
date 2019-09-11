@@ -28,7 +28,7 @@ Library           Collections
 
 聚焦
     [Arguments]    ${locator}
-    Focus    ${locator}
+    Set Focus To Element    ${locator}
 
 截图
     Screenshot.Take Screenshot    测试截图功能

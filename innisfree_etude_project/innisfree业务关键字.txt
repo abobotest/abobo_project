@@ -5,47 +5,6 @@ Library           Collections
 Resource          基础关键字.txt
 
 *** Keywords ***
-下单流程
-    [Arguments]    ${输入结果内查找的内容}
-    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
-    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
-    ...    ELSE IF    log    不存在提示信息
-    等待    1
-    Set Selenium Speed    0.5
-    Click Element    xpath=//*[@id="header"]/div/div[1]/ul/li[1]/a/span    #点击购物
-    Click Element    CSS=#UB_TOP > a    #点击洁面与卸妆
-    聚焦    xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[1]/span/label
-    Click Element    xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[1]/span/label    #选择补水保湿
-    Click Element    xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[2]/span/label    #毛孔管理
-    Click Element    xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[3]/span/label    #舒缓修护
-    Click Element    xpath=//*[@id="contents"]/div[5]/div[2]/div/ul/li[6]/span/label    #弹性紧致
-    Click Element    xpath=//*[@id="contents"]/div[5]/div[4]/a[1]/img    #点击按条件搜索
-    聚焦    id=productFilter_search
-    输入    id=productFilter_search    ${输入结果内查找的内容}
-    点击元素    xpath=//*[@id="contents"]/div[6]/a/img
-    截图
-    Element Should Contain    xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a    绿茶精萃保湿洁面膏 150ML
-    点击元素    xpath=//*[@id="productListSub"]/div[1]/ul/li[2]/p/a    #点击上述商品进入购买界面
-    ${titles}    Get Window Titles    #切换页面
-    log    ${titles}
-    ${title1}    Get From List    ${titles}    0
-    ${title2}    Get From List    ${titles}    1
-    Select Window    title=${title2}
-    聚焦    id=amount
-    清空默认值    id=amount
-    输入    id=amount    2    #输入商品数量
-    点击元素    xpath=//*[@id="contents"]/div[3]/div[2]/div[4]/a[1]/img    #点击立即购买
-    Comment    点击元素    xpath=//*[@id="orderForm"]/div[3]/table/tbody/tr[2]/td[5]/div/span[2]/a/img    #点击修改商品数量
-    聚焦    id=dlvReqCnt
-    输入    id=dlvReqCnt    请尽快发货请尽快发货
-    Comment    Choose Cancel On Next Confirmation
-    点击元素    id=submit_stt    #提交定单
-    ${msg}    Confirm Action
-    log    ${msg}
-    ${msg2}    Confirm Action
-    Should Be Equal    ${msg2}    下订单成功。
-    Comment    Close Window
-
 登陆innisfree
     [Arguments]    ${url}    ${username}    ${password}
     打开浏览器    ${url}

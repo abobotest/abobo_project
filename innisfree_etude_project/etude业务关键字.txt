@@ -1,0 +1,75 @@
+*** Settings ***
+Library           SeleniumLibrary
+Library           Screenshot
+Library           Collections
+Resource          基础关键字.txt
+
+*** Keywords ***
+登陆etude
+    [Arguments]    ${url}    ${username}    ${password}
+    打开浏览器    ${url}
+    Wait Until Page Contains    登录    12
+    浏览器最大化
+    Set Selenium Implicit Wait    12
+    Comment    PC端关闭页面提示信息
+    点击元素    xpath=//div[text()="登录/注册"]    #点击登陆图标
+    输入    class=login_account    ${username}
+    输入    class=login_pw    ${password}
+    点击元素    class=login-btn
+    Wait Until Page Contains    退出
+    设置执行速度    0.5
+
+PC端关闭页面提示信息
+    ${count}    Get Element Count    xpath=//h1[contains(text(),'您有一张优惠券请查收')]
+    log    ${count}
+    Run Keyword If    ${count}>0    Click Element    xpath=//h1[contains(text(),'您有一张优惠券请查收')]/following-sibling::span
+    ${count_new}    Get Element Count    xpath=//h1[contains(text(),'您有一张优惠券请查收')]
+    log    ${count_new}
+
+清空购物车
+    点击元素    xpath=//div[text()="购物车"]
+    点击元素    xpath=//button[text()="清空购物车"]
+    ${statusvalue}    Run Keyword And Ignore Error    点击元素    xpath=//button[text()="确认"]    #点击确认
+    log    ${statusvalue}
+    Comment    Page Should Contain    您的购物车是空的
+    ${total_price}    Get Text    id=total_price
+    Should Be Equal As Strings    ${total_price}    ￥0.00
+
+PC端下单流程
+    点击元素    xpath=//span[text()="全部分类"]    #点击全部分类
+    点击元素    partial link=眼线
+    Page Should Contain    眼线
+    Select From List By Value    id=proSortSelect    1    #价格从低到高
+    等待    2
+    聚焦    xpath=//div[contains(text(),'伊蒂之屋时尚精巧持久型眼线笔')]
+    点击元素    xpath=//div[contains(text(),'伊蒂之屋时尚精巧持久型眼线笔')]
+    ${titles}    Get Window Titles    #切换页面
+    log    ${titles}
+    Comment    ${title1}    Get From List    ${titles}    0
+    Comment    ${title2}    Get From List    ${titles}    1
+    Select Window    title=${titles[1]}
+    聚焦    id=sku_stock_list
+    Select From List By Value    id=sku_stock_list    2    #选择数量
+    聚焦    xpath=//button[text()="立即购买"]
+    点击元素    xpath=//button[text()="立即购买"]
+    聚焦    css=#templateAddress > div > div.etude_order_pull_down_con > ul > li.listitem.checkedli    #选择默认的地址
+    点击元素    css=#templateAddress > div > div.etude_order_pull_down_con > ul > li.listitem.checkedli
+    点击元素    xpath=//button[text()="提交订单"]
+    等待    3
+    ${elements}    Get WebElements    class=close_btn
+    点击元素    ${elements[1]}    #点击关闭订单
+    Close Window
+    Select Window    title=${titles[0]}
+
+获取各类型订单总数
+    [Arguments]    ${order_type}    # 订单类型
+    [Documentation]    填入（待付款，待发货，待收货，待评价，退款/售后）这几种类型字段
+    等待    2
+    点击元素    xpath=//div[text()="林江"]    #点击个人中心
+    Page Should Contain    全部订单
+    等待    2
+    聚焦    xpath=//div[text()="${order_type}"]
+    ${order_text}    Get Text    xpath=//div[text()="${order_type}"]/preceding-sibling::div[1]/a
+    ${order_number}    Evaluate    int(${order_text})    #返回订单总数
+    log    ${order_number}
+    [Return]    ${order_number}    # 获取订单总数

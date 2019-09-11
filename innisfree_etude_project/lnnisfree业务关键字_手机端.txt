@@ -5,33 +5,6 @@ Library           Collections
 Resource          基础关键字.txt
 
 *** Keywords ***
-移动端下单演示
-    Set Selenium Speed    0.6
-    Comment    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
-    Comment    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
-    点击元素    xpath=//img[@src='/cn_resources/mobile/images/main/menu.png']    #点击左上脚菜单
-    点击元素    xpath=//*[@id=\"wrap\"]/section/div/ul/li/span    #点击购物
-    点击元素    xpath=//*[@id=\"wrap\"]/section/div/ul/li/ul/li[2]/span    #点击护肤系列
-    点击元素    xpath=//*[@id=\"wrap\"]/section/div/ul/li/ul/li[2]/ul/li[16]/a/span    #点击橄榄
-    聚焦    xpath=//*[@id="productListSub"]/div[1]/div[3]/a/span[3]    #点击橄榄油肤质提升菁华乳
-    ${a}    Get Text    xpath=//*[@id="productListSub"]/div[1]/div[3]/a/span[3]    #获取文本
-    点击元素    xpath=//*[@id="productListSub"]/div[1]/div[3]/a/span[3]
-    Page Should Contain    橄榄油肤质提升菁华乳
-    等待    1
-    Set Focus To Element    //*[@id="container"]/div/div[3]/div[1]/span[1]
-    Comment    聚焦    //*[@id="container"]/div/div[3]/div[1]/span[1]
-    Wait Until Element Is Visible    xpath=//*[@id="container"]/div/div[3]/div[1]/span[2]/span/input
-    清空默认值    xpath=//*[@id="container"]/div/div[3]/div[1]/span[2]/span/input
-    输入    xpath=//*[@id="container"]/div/div[3]/div[1]/span[2]/span/input    2
-    聚焦    id=footer
-    点击元素    id=footer
-    点击元素    CSS=#container > div > div.btnFixed > div > span:nth-child(1) > a    #点击立即购买
-    聚焦    id=dlvReqCnt
-    输入    id=dlvReqCnt    填写留言内容填写留言内容
-    聚焦    identifier=submit_stt
-    点击元素    identifier=submit_stt
-    Comment    关闭浏览器
-
 手机端登陆innisfree
     [Arguments]    ${url}    ${username}    ${password}
     ${devname}    Create Dictionary    deviceName=iPhone 6

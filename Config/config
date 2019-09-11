@@ -12,6 +12,6 @@ content = 这是第一轮测试邮件
 # 项目路径
 projectDir = D:\abobo_project\abobo_project
 #RFS执行的配置文件
-innisfree_argfile = D:\abobo_project\abobo_project\data\innisfree_argfile.txt
+argfile = D:\abobo_project\abobo_project\data\argfile.txt
 #悦诗风吟的RFS项目目录
-innisfree_projectDir = D:\abobo_project\abobo_project\innisfree_project
+rfs_projectDir = D:\abobo_project\abobo_project\innisfree_etude_project

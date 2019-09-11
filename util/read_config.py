@@ -60,24 +60,24 @@ class GetConfig(object):
         return content
 
     @property
-    def innisfree_argfile(self):
+    def argfile(self):
         try:
-            innisfree_argfile = self.returnConfig().get(
-                section="PROJECT", option="innisfree_argfile"
+            argfile = self.returnConfig().get(
+                section="PROJECT", option="argfile"
             )
         except (NoOptionError, NoSectionError) as e:
-            innisfree_argfile = None
-        return innisfree_argfile
+            argfile = None
+        return argfile
 
     @property
-    def innisfree_projectDir(self):
+    def rfs_projectDir(self):
         try:
-            innisfree_projectDir = self.returnConfig().get(
-                section="PROJECT", option="innisfree_projectDir"
+            rfs_projectDir = self.returnConfig().get(
+                section="PROJECT", option="rfs_projectDir"
             )
         except (NoOptionError, NoSectionError) as e:
-            innisfree_projectDir = None
-        return innisfree_projectDir
+            rfs_projectDir = None
+        return rfs_projectDir
 
 if __name__ == '__main__':
    a = GetConfig()

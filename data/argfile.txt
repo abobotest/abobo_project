@@ -1,0 +1,19 @@
+#--outputdir
+#D:\abobo_project\robot_project\test\report
+#--variablefile
+#D:\abobo_project\robot_project\test\test1.py
+--listener
+D:\abobo_project\abobo_project\venv\lib\site-packages\robotide\contrib\testrunner\TestRunnerAgent.py
+-C
+off
+-W
+102
+--suite
+Innisfree Etude Project.Innisfree
+--test
+Innisfree Etude Project.Innisfree.0002_手机端下单
+#--suite
+#Innisfree Etude Project.Innisfree
+#--test
+#Innisfree Etude Project.Innisfree.TESTTEST
+

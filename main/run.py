@@ -16,8 +16,8 @@ my_config = GetConfig()
 sendEmail = my_config.is_sendEmail
 sub = my_config.sub
 content = my_config.content
-innisfree_argfile_path = my_config.innisfree_argfile
-innisfree_projectDir_path = my_config.innisfree_projectDir
+argfile_path = my_config.argfile
+rfs_projectDir_path = my_config.rfs_projectDir
 rootPath=my_config.projectDir
 
 
@@ -35,7 +35,7 @@ rootPath=my_config.projectDir
 report_dir = rootPath + '/reports/test'
 
 #执行命令行操作，运行RFS生成测试报告到report_dir，argfile为运行参数可自行根据需求进行修改。
-cmd = 'robot --outputdir '+report_dir+' --argumentfile '+innisfree_argfile_path+' '+innisfree_projectDir_path
+cmd = 'robot --outputdir '+report_dir+' --argumentfile '+argfile_path+' '+rfs_projectDir_path
 os.system(cmd)
 
 
