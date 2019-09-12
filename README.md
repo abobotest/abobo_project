@@ -4,12 +4,12 @@
 ### 项目目录
     1. Config: 配置文件
     2. Data: 测试数据
-    3. innisfree_project: innisfree的工程目录，可用RFS的IDE打开此目录,包含测试用例
+    3. innisfree_etude_project: rfs工程目录，可用RFS的IDE打开此目录,包含测试用例
     5. main: 主入口文件
     6. reports: 测试报告以及测试LOG存放的目录
     7. util: 工具类
     8、driver: 浏览器驱动
-    9. venv: python虚拟环境，自己新建
+    9. venv: python虚拟环境，
     10. runtest.bat: 启动并执行案例(执行runtest.py)
     11. 启动robotframework_IDE.bat: RFS的IDE，用于编写测试用例
     12. requirements.txt: 依赖第三方库明细
