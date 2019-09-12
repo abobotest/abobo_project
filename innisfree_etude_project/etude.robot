@@ -17,5 +17,5 @@ ${测试环境}           http://www.etude.cn/
     ${new_number}    获取各类型订单总数    待付款
     ${expect_number}    Evaluate    int(${old_number})+1
     Should Be Equal As Integers    ${new_number}    ${expect_number}    #验证总订单数为之前+1
-    Comment    Close Window
-    Comment    关闭浏览器
+    Close Window
+    关闭浏览器

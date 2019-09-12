@@ -8,12 +8,21 @@ D:\abobo_project\abobo_project\venv\lib\site-packages\robotide\contrib\testrunne
 off
 -W
 102
---suite
-Innisfree Etude Project.Innisfree
---test
-Innisfree Etude Project.Innisfree.0002_手机端下单
 #--suite
 #Innisfree Etude Project.Innisfree
 #--test
-#Innisfree Etude Project.Innisfree.TESTTEST
+#Innisfree Etude Project.Innisfree.0001_下单
+#--suite
+#Innisfree Etude Project.Innisfree
+#--test
+#Innisfree Etude Project.Innisfree.0003_验证后台订单
+#--suite
+#Innisfree Etude Project.Innisfree
+#--test
+#Innisfree Etude Project.Innisfree.0002_手机端下单
+--suite
+Innisfree Etude Project.Etude
+--test
+Innisfree Etude Project.Etude.0001_下单
+
 

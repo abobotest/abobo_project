@@ -65,10 +65,11 @@ Resource          基础关键字.txt
     Should Be Equal    ${msg2}    下订单成功。
 
 手机端关闭页面提示信息
-    : FOR    ${index}    IN RANGE    10
-    \    ${count}    Get Element Count    xpath=//div[contains(text(),'0秒后自动关闭')]
-    \    Exit For Loop If    ${count}==1
-    \    等待    1
+    Comment    : FOR    ${index}    IN RANGE    10
+    Comment    \    ${count}    Get Element Count    xpath=//div[contains(text(),'0秒后自动关闭')]
+    Comment    \    Exit For Loop If    ${count}==1
+    Comment    \    等待    1
+    Run Keyword And Ignore Error    Click Element    xpath=//div[contains(text(),'自动关闭')]
 
 手机端清空购物车
     设置执行速度    0.5
