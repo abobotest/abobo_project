@@ -23,6 +23,6 @@ off
 --suite
 Innisfree Etude Project.Etude
 --test
-Innisfree Etude Project.Etude.0001_下单
+Innisfree Etude Project.Etude.0001_手机端下单
 
 

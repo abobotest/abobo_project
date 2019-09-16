@@ -1,0 +1,62 @@
+*** Settings ***
+Library           SeleniumLibrary
+Resource          基础关键字.txt
+
+*** Keywords ***
+手机端登陆etude
+    [Arguments]    ${url}    ${username}    ${password}
+    ${devname}    Create Dictionary    deviceName=iPhone 6
+    ${mobile_emulation}    Create Dictionary    mobileEmulation=${devname}
+    ${chromeoptions}=    Evaluate    sys.modules['selenium.webdriver.chrome.options'].Options()    sys, selenium.webdriver.chrome.options
+    ${chromeoptions._experimental_options}    Set Variable    ${mobile_emulation}
+    Comment    log    ${chromeoptions}
+    Create Webdriver    Chrome    chrome_options=${chromeoptions}
+    Go To    ${url}
+    Set Selenium Implicit Wait    15
+    Comment    手机端关闭页面提示信息
+    设置执行速度    1
+    聚焦    xpath=//p[text()="我的伊蒂"]
+    Comment    Wait Until Element Contains    xpath=//p[text()="我的伊蒂"]    我的伊蒂    15
+    等待    5
+    Wait Until Element Is Visible    xpath=//p[text()="我的伊蒂"]    15
+    点击元素    xpath=//p[text()="我的伊蒂"]
+    点击元素    xpath=//button[text()="登录"]
+    输入    xpath=//input[@placeholder="账号（手机号/邮箱）"]    ${username}
+    输入    xpath=//input[@placeholder="密码"]    ${password}
+    点击元素    xpath=//button[@class="tj-login-button tj-btn tj-btn-main"]
+    Comment    等待    2
+    Comment    点击元素    xpath=//p[text()="我的伊蒂"]
+    Comment    Page Should Contain Element    我的订单
+
+获取手机端各类型订单数量
+    [Arguments]    ${order_type}
+    点击元素    xpath=//p[text()="我的伊蒂"]
+    ${num}    Get Text    xpath=//span[text()="${order_type}"]/preceding-sibling::div/span
+    [Return]    ${num}
+
+手机端清空购物车
+    点击元素    xpath=//p[text()="主页"]
+    点击元素    xpath=//button[@class="tj-cart febsui-button-inited"]    #点击购物车
+    点击元素    xpath=//span[text()="管理"]    #点击管理
+    点击元素    xpath=//button[text()="删除选中"]    #点击删除选中
+    刷新页面
+    Page Should Contain    无数据
+    go back
+
+手机端下单
+    点击元素    xpath=//p[text()="主页"]
+    等待    1
+    点击元素    class=febsvue-search-icon    #点击搜索
+    输入    xpath=//input[@type="search"]    伊蒂之屋清爽控油柔雾散粉（迪士尼限量版）
+    点击元素    xpath=//button[contains(text(),'搜索')]
+    Page Should Contain    伊蒂之屋清爽控油柔雾散粉（迪士尼限量版）
+    点击元素    xpath=//span[contains(text(),'伊蒂之屋清爽控油柔雾散粉（迪士尼限量版）')]
+    Comment    点击元素    xpath=//button[@class="tj-product-info-cart"]    #点击加入购物车
+    点击元素    xpath=//button[contains(text(),'立即购买')]
+    Wait Until Page Contains    确认订单
+    Wait Until Element Is Visible    class=tj-order-address-icon
+    点击元素    class=tj-order-address-icon    #选择地址
+    点击元素    xpath=//div[contains(text(),'地址一')]
+    点击元素    xpath=//span[text()="确定"]
+    点击元素    xpath=//button[contains(text(),'结算')]
+    Comment    Repeat Keyword    2    go back
