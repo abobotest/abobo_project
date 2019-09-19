@@ -34,6 +34,8 @@ rootPath=my_config.projectDir
 #如果在jenkins上执行，需要固定的目录
 report_dir = rootPath + '/reports/test'
 
+
+
 #执行命令行操作，运行RFS生成测试报告到report_dir，argfile为运行参数可自行根据需求进行修改。
 cmd = 'robot --outputdir '+report_dir+' --argumentfile '+argfile_path+' '+rfs_projectDir_path
 os.system(cmd)

@@ -16,13 +16,13 @@ off
 #Innisfree Etude Project.Innisfree
 #--test
 #Innisfree Etude Project.Innisfree.0003_验证后台订单
-#--suite
-#Innisfree Etude Project.Innisfree
-#--test
-#Innisfree Etude Project.Innisfree.0002_手机端下单
 --suite
-Innisfree Etude Project.Etude
+Innisfree Etude Project.Innisfree
 --test
-Innisfree Etude Project.Etude.0001_手机端下单
+Innisfree Etude Project.Innisfree.手机端test
+#--suite
+#Innisfree Etude Project.Etude
+#--test
+#Innisfree Etude Project.Etude.0001_手机端下单
 
 

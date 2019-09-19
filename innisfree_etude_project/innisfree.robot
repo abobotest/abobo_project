@@ -35,14 +35,15 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
     关闭浏览器
 
 手机端test
-    手机端登陆innisfree    ${测试环境}    18850369373    qwe123
-    手机端清空购物车
-    ${old_order_num}    获取手机端各类型订单数量    等待付款
-    Comment    log    ${a}
-    手机端下单
-    ${new_order_num}    获取手机端各类型订单数量    等待付款
-    ${expect_number}    Evaluate    int(${old_order_num})+1
-    Should Be Equal As Integers    ${new_order_num}    ${expect_number}    #验证总订单数为之前+1
+    Comment    手机端登陆innisfree    ${测试环境}    18850369373    qwe123
+    Comment    手机端清空购物车
+    Comment    ${old_order_num}    获取手机端各类型订单数量    等待付款
+    Comment    Comment    log    ${a}
+    Comment    手机端下单
+    Comment    ${new_order_num}    获取手机端各类型订单数量    等待付款
+    Comment    ${expect_number}    Evaluate    int(${old_order_num})+1
+    Comment    Should Be Equal As Integers    ${new_order_num}    ${expect_number}    #验证总订单数为之前+1
+    log    gggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaa
 
 0003_验证后台订单
     Comment    登陆innisfree后台    ${后台地址}    Markr    q1w2e3r4

@@ -24,6 +24,7 @@ Resource          基础关键字.txt
     输入    xpath=//input[@placeholder="账号（手机号/邮箱）"]    ${username}
     输入    xpath=//input[@placeholder="密码"]    ${password}
     点击元素    xpath=//button[@class="tj-login-button tj-btn tj-btn-main"]
+    截图
     Comment    等待    2
     Comment    点击元素    xpath=//p[text()="我的伊蒂"]
     Comment    Page Should Contain Element    我的订单
