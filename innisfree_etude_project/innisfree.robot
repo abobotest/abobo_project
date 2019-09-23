@@ -21,18 +21,18 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
     ${expect_number}    Evaluate    int(${old_number})+1
     Should Be Equal As Integers    ${new_number}    ${expect_number}    #验证总订单数为之前+1
     Close Window
-    Comment    关闭浏览器
+    关闭浏览器
 
 0002_手机端下单
-    手机端登陆innisfree    ${测试环境}    18850369373    qwe123
-    手机端清空购物车
-    ${old_order_num}    获取手机端各类型订单数量    等待付款
-    Comment    log    ${a}
-    手机端下单
-    ${new_order_num}    获取手机端各类型订单数量    等待付款
-    ${expect_number}    Evaluate    int(${old_order_num})+1
-    Should Be Equal As Integers    ${new_order_num}    ${expect_number}    #验证总订单数为之前+1
-    关闭浏览器
+    Comment    手机端登陆innisfree    ${测试环境}    18850369373    qwe123
+    Comment    手机端清空购物车
+    Comment    ${old_order_num}    获取手机端各类型订单数量    等待付款
+    Comment    Comment    log    ${a}
+    Comment    手机端下单
+    Comment    ${new_order_num}    获取手机端各类型订单数量    等待付款
+    Comment    ${expect_number}    Evaluate    int(${old_order_num})+1
+    Comment    Should Be Equal As Integers    ${new_order_num}    ${expect_number}    #验证总订单数为之前+1
+    Comment    关闭浏览器
 
 手机端test
     Comment    手机端登陆innisfree    ${测试环境}    18850369373    qwe123
@@ -46,11 +46,11 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
     log    gggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaa
 
 0003_验证后台订单
+    Comment    Comment    登陆innisfree后台    ${后台地址}    Markr    q1w2e3r4
+    Comment    Comment    验证订单存在    19091215064761
+    Comment    登陆innisfree    ${测试环境}    18850369373    qwe123
+    Comment    ${num}    获取最新订单号
+    Comment    关闭浏览器
     Comment    登陆innisfree后台    ${后台地址}    Markr    q1w2e3r4
-    Comment    验证订单存在    19091215064761
-    登陆innisfree    ${测试环境}    18850369373    qwe123
-    ${num}    获取最新订单号
-    关闭浏览器
-    登陆innisfree后台    ${后台地址}    Markr    q1w2e3r4
-    验证订单存在    ${num}
-    关闭浏览器
+    Comment    验证订单存在    ${num}
+    Comment    关闭浏览器

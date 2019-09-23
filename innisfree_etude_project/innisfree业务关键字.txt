@@ -10,9 +10,11 @@ Resource          基础关键字.txt
     打开浏览器    ${url}
     浏览器最大化
     Set Selenium Implicit Wait    5
+    Set Selenium Speed    0.5
     PC端关闭页面提示信息
+    等待    0.5
     聚焦    class=login
-    点击元素    xpath=//a[@class="login"]    #点击登陆图标
+    点击元素    xpath=//a[@class="login"]/img    #点击登陆图标
     等待    0.5
     点击元素    link=登录
     输入    id=email    ${username}
@@ -22,6 +24,7 @@ Resource          基础关键字.txt
 
 清空购物车
     设置执行速度    0.5
+    PC端关闭页面提示信息
     点击元素    class=cart
     点击元素    xpath=//span[contains(text(),'清空')]
     ${price}    Get Text    class=cart_allPrice
@@ -81,7 +84,8 @@ PC端下单流程
 PC端关闭页面提示信息
     Comment    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
     Comment    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
-    Run Keyword And Ignore Error    Click Element    xpath=//div[contains(text(),'自动关闭')]
+    等待    1
+    Run Keyword And Ignore Error    Click Element    xpath=//span[@class="timeClose"]
 
 登陆innisfree后台
     [Arguments]    ${url}    ${username}    ${password}
