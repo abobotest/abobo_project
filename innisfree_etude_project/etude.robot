@@ -1,6 +1,7 @@
 *** Settings ***
-Suite Setup       手机端登陆etude    ${测试环境}    13799447123    abobo12
-Suite Teardown    关闭浏览器
+Suite Setup
+Suite Teardown
+Test Teardown
 Library           SeleniumLibrary
 Library           Screenshot
 Library           Collections
@@ -24,7 +25,7 @@ ${测试环境}           https://www.etude.cn/
     Comment    关闭浏览器
 
 0001_手机端下单
-    Comment    Comment    手机端登陆etude    ${测试环境}    13799447123    abobo123
+    Comment    手机端登陆etude    ${测试环境}    13799447123    abobo123
     Comment    ${old_num}    获取手机端各类型订单数量    待付款
     Comment    手机端清空购物车
     Comment    手机端下单
@@ -33,4 +34,4 @@ ${测试环境}           https://www.etude.cn/
     Comment    ${new_num}    获取手机端各类型订单数量    待付款
     Comment    ${expect_num}    Evaluate    int(${old_num})+1
     Comment    Should Be Equal As Integers    ${new_num}    ${expect_num}    #验证总订单数为之前+1
-    Comment    Comment    关闭浏览器
+    Comment    关闭浏览器
