@@ -11,7 +11,8 @@ Resource          基础关键字.txt
     浏览器最大化
     Set Selenium Implicit Wait    5
     PC端关闭页面提示信息
-    点击元素    class=login    #点击登陆图标
+    聚焦    class=login
+    点击元素    xpath=//a[@class="login"]    #点击登陆图标
     等待    0.5
     点击元素    link=登录
     输入    id=email    ${username}
@@ -44,6 +45,7 @@ PC端下单流程
     输入    id=productFilter_search    ${输入结果内查找的内容}
     点击元素    xpath=//img[@alt='搜索']    #结果中搜索
     截图
+    聚焦    partial link=绿茶精萃夜间保湿修护面膜
     Element Should Contain    partial link=绿茶精萃夜间保湿修护面膜    绿茶精萃夜间保湿修护面膜
     点击元素    partial link=绿茶精萃夜间保湿修护面膜    #点击上述商品进入购买界面
     ${titles}    Get Window Titles    #切换页面
@@ -77,8 +79,9 @@ PC端下单流程
     [Return]    ${order_number}    # 类型为整型
 
 PC端关闭页面提示信息
-    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
-    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
+    Comment    ${count}    Get Element Count    xpath=//div[contains(text(),'自动关闭')]
+    Comment    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
+    Run Keyword And Ignore Error    Click Element    xpath=//div[contains(text(),'自动关闭')]
 
 登陆innisfree后台
     [Arguments]    ${url}    ${username}    ${password}

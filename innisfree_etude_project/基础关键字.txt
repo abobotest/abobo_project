@@ -6,7 +6,8 @@ Library           Collections
 *** Keywords ***
 打开浏览器
     [Arguments]    ${url}
-    Open Browser    ${url}    chrome
+    Comment    Open Browser    ${url}    chrome
+    Open Browser    ${url}    headlesschrome
 
 点击元素
     [Arguments]    ${locator}
