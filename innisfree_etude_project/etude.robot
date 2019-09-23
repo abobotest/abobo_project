@@ -23,6 +23,7 @@ ${测试环境}           https://www.etude.cn/
     Comment    Should Be Equal As Integers    ${new_number}    ${expect_number}    #验证总订单数为之前+1
     Comment    Close Window
     Comment    关闭浏览器
+    Comment    1
 
 0001_手机端下单
     Comment    手机端登陆etude    ${测试环境}    13799447123    abobo123
