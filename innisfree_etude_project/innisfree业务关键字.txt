@@ -12,9 +12,9 @@ Resource          基础关键字.txt
     Set Selenium Implicit Wait    5
     Set Selenium Speed    0.5
     PC端关闭页面提示信息
-    等待    0.5
     聚焦    class=login
-    点击元素    xpath=//a[@class="login"]/img    #点击登陆图标
+    等待    1
+    点击元素    class=login    #点击登陆图标
     等待    0.5
     点击元素    link=登录
     输入    id=email    ${username}
@@ -86,6 +86,7 @@ PC端关闭页面提示信息
     Comment    Run Keyword If    ${count}    Click Element    xpath=//div[contains(text(),'自动关闭')]
     等待    1
     Run Keyword And Ignore Error    Click Element    xpath=//span[@class="timeClose"]
+    Comment    xpath=//span[@class="timeClose"]
 
 登陆innisfree后台
     [Arguments]    ${url}    ${username}    ${password}

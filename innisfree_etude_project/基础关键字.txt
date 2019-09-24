@@ -6,8 +6,8 @@ Library           Collections
 *** Keywords ***
 打开浏览器
     [Arguments]    ${url}
-    Open Browser    ${url}    chrome
-    Comment    Open Browser    ${url}    headlesschrome
+    Comment    Open Browser    ${url}    chrome
+    Open Browser    ${url}    headlesschrome
 
 点击元素
     [Arguments]    ${locator}
@@ -29,7 +29,7 @@ Library           Collections
 
 聚焦
     [Arguments]    ${locator}
-    Set Focus To Element    ${locator}
+    Focus    ${locator}
 
 截图
     Screenshot.Take Screenshot    测试截图功能
