@@ -51,6 +51,7 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
     ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    headless
     Call Method    ${chrome_options}    add_argument    disable-gpu
+    Call Method    ${chrome_options}    add_argument    no-sandbox
     ${options}    Run Keyword If    True    Call Method    ${chrome_options}    to_capabilities
     Comment    Call Method    ${chrome_options}    to_capabilities    ${options}
     Open Browser    https://stg.innisfree.cn/Main.do?ref=2    chrome    desired_capabilities=${options}
