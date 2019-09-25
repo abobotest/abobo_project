@@ -11,17 +11,17 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
 
 *** Test Cases ***
 0001_下单
-    登陆innisfree    ${测试环境}    18850369373    qwe123
-    清空购物车
-    ${old_number}    获取我的订单中各类型订单总数    待付款    #获取全部订单的数量
-    Comment    log    ${old_number}
-    PC端下单流程    面膜    #验证下单成功
-    ${new_number}    获取我的订单中各类型订单总数    待付款    #获取全部订单的数量
-    Comment    log    ${new_number}
-    ${expect_number}    Evaluate    int(${old_number})+1
-    Should Be Equal As Integers    ${new_number}    ${expect_number}    #验证总订单数为之前+1
-    Close Window
-    关闭浏览器
+    Comment    登陆innisfree    ${测试环境}    18850369373    qwe123
+    Comment    清空购物车
+    Comment    ${old_number}    获取我的订单中各类型订单总数    待付款    #获取全部订单的数量
+    Comment    Comment    log    ${old_number}
+    Comment    PC端下单流程    面膜    #验证下单成功
+    Comment    ${new_number}    获取我的订单中各类型订单总数    待付款    #获取全部订单的数量
+    Comment    Comment    log    ${new_number}
+    Comment    ${expect_number}    Evaluate    int(${old_number})+1
+    Comment    Should Be Equal As Integers    ${new_number}    ${expect_number}    #验证总订单数为之前+1
+    Comment    Close Window
+    Comment    关闭浏览器
 
 0002_手机端下单
     Comment    手机端登陆innisfree    ${测试环境}    18850369373    qwe123
