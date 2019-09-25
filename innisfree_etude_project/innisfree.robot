@@ -12,7 +12,6 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
 
 *** Test Cases ***
 0001_下单
-    Start
     登陆innisfree    ${测试环境}    18850369373    qwe123
     清空购物车
     ${old_number}    获取我的订单中各类型订单总数    待付款    #获取全部订单的数量
@@ -24,7 +23,6 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
     Should Be Equal As Integers    ${new_number}    ${expect_number}    #验证总订单数为之前+1
     Close Window
     关闭浏览器
-    stop
 
 0002_手机端下单
     Comment    手机端登陆innisfree    ${测试环境}    18850369373    qwe123
