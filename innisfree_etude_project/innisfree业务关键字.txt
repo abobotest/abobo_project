@@ -14,6 +14,7 @@ Resource          基础关键字.txt
     PC端关闭页面提示信息
     聚焦    class=login
     等待    1
+    Comment    Click Image    src=/cn_resources/images/newpc/user.png
     点击元素    class=login    #点击登陆图标
     等待    0.5
     点击元素    link=登录
