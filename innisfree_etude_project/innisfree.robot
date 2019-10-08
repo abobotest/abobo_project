@@ -11,7 +11,8 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
 
 *** Test Cases ***
 0001_下单
-    登陆innisfree    ${测试环境}    18850369373    qwe123
+    Comment    登陆innisfree    ${测试环境}    18850369373    qwe123
+    headless_登陆innisfree    ${测试环境}    18850369373    qwe123
     清空购物车
     ${old_number}    获取我的订单中各类型订单总数    待付款    #获取全部订单的数量
     Comment    log    ${old_number}
@@ -34,40 +35,27 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
     Comment    Should Be Equal As Integers    ${new_order_num}    ${expect_number}    #验证总订单数为之前+1
     Comment    关闭浏览器
 
-手机端test
-    Comment    手机端登陆innisfree    ${测试环境}    18850369373    qwe123
-    Comment    手机端清空购物车
-    Comment    ${old_order_num}    获取手机端各类型订单数量    等待付款
-    Comment    Comment    log    ${a}
-    Comment    手机端下单
-    Comment    ${new_order_num}    获取手机端各类型订单数量    等待付款
-    Comment    ${expect_number}    Evaluate    int(${old_order_num})+1
-    Comment    Should Be Equal As Integers    ${new_order_num}    ${expect_number}    #验证总订单数为之前+1
-    Comment    gggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaa
-    Comment    Import Library    D:\\test.py
-    Comment    printprint
-    Comment    printprint
-    Comment    # 配置 headless 启动方式
-    Comment    ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Comment    Call Method    ${chrome_options}    add_argument    headless
-    Comment    Call Method    ${chrome_options}    add_argument    disable-gpu
-    Comment    Comment    Call Method    ${chrome_options}    add_argument    no-sandbox
-    Comment    ${options}    Run Keyword If    True    Call Method    ${chrome_options}    to_capabilities
-    Comment    Comment    Call Method    ${chrome_options}    to_capabilities    ${options}
-    Comment    Open Browser    https://stg.innisfree.cn/Main.do?ref=2    chrome    desired_capabilities=${options}
-    Comment    浏览器最大化
-    Comment    Set Selenium Implicit Wait    5
-    Comment    Set Selenium Speed    0.5
-    Comment    PC端关闭页面提示信息
-    Comment    聚焦    class=login
-    Comment    等待    1
-    Comment    Click Image    src=/cn_resources/images/newpc/user.png
-    Comment    等待    0.5
-    Comment    点击元素    link=登录
-    Comment    输入    id=email    18850369373
-    Comment    输入    id=pwd    qwe123
-    Comment    点击元素    css=#login > img
-    Comment    设置执行速度    0.5
+test
+    Comment    配置 headless 启动方式
+    ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument    headless
+    Call Method    ${chrome_options}    add_argument    disable-gpu
+    Comment    Call Method    ${chrome_options}    add_argument    no-sandbox
+    ${options}    Run Keyword If    True    Call Method    ${chrome_options}    to_capabilities
+    Open Browser    https://stg.innisfree.cn/Main.do?ref=2    chrome    desired_capabilities=${options}
+    浏览器最大化
+    Set Selenium Implicit Wait    5
+    Set Selenium Speed    0.5
+    PC端关闭页面提示信息
+    聚焦    class=login
+    等待    1
+    Execute Javascript    document.getElementsByClassName("login").click;
+    等待    0.5
+    点击元素    link=登录
+    输入    id=email    18850369373
+    输入    id=pwd    qwe123
+    点击元素    css=#login > img
+    设置执行速度    0.5
 
 0003_验证后台订单
     Comment    Comment    登陆innisfree后台    ${后台地址}    Markr    q1w2e3r4

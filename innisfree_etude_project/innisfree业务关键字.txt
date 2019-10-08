@@ -26,11 +26,16 @@ Resource          基础关键字.txt
 清空购物车
     设置执行速度    0.5
     PC端关闭页面提示信息
-    点击元素    class=cart
-    点击元素    xpath=//span[contains(text(),'清空')]
-    ${price}    Get Text    class=cart_allPrice
+    Comment    点击元素    class=cart
+    Execute Javascript    document.getElementsByClassName("cart").click;
+    聚焦    xpath=//span[contains(text(),'清空')]
+    Comment    点击元素    xpath=//span[contains(text(),'清空')]
+    Execute Javascript    var nodes=document.evaluate("//span[contains(text(),'清空')]", document).iterateNext();nodes.click;
+    Comment    ${price}    Get Text    class=cart_allPrice
+    ${price}    Execute Javascript    var x = document.getElementsByClassName("cart_allPrice")[0].textContent;return x;
     Should Be Equal As Strings    ${price}    总计/￥0
-    点击元素    class=close_cart
+    Comment    点击元素    class=close_cart
+    Execute Javascript    document.getElementsByClassName("close_cart").click;
 
 PC端下单流程
     [Arguments]    ${输入结果内查找的内容}
@@ -124,3 +129,26 @@ PC端关闭页面提示信息
     ${order_numbers}    Get WebElements    xpath=//div[@class="td orderNum"]
     ${order_number}    Get Text    ${order_numbers[0]}
     [Return]    ${order_number}
+
+headless_登陆innisfree
+    [Arguments]    ${url}    ${username}    ${password}
+    Comment    配置 headless 启动方式
+    ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument    headless
+    Call Method    ${chrome_options}    add_argument    disable-gpu
+    Comment    Call Method    ${chrome_options}    add_argument    no-sandbox
+    ${options}    Run Keyword If    True    Call Method    ${chrome_options}    to_capabilities
+    Open Browser    ${url}    chrome    desired_capabilities=${options}
+    浏览器最大化
+    Set Selenium Implicit Wait    5
+    Set Selenium Speed    0.5
+    PC端关闭页面提示信息
+    聚焦    class=login
+    等待    1
+    Execute Javascript    document.getElementsByClassName("login").click;
+    等待    0.5
+    点击元素    link=登录
+    输入    id=email    ${username}
+    输入    id=pwd    ${password}
+    点击元素    css=#login > img
+    设置执行速度    0.5
