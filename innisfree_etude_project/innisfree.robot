@@ -36,26 +36,26 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
     Comment    关闭浏览器
 
 test
-    Comment    配置 headless 启动方式
-    ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    headless
-    Call Method    ${chrome_options}    add_argument    disable-gpu
-    Comment    Call Method    ${chrome_options}    add_argument    no-sandbox
-    ${options}    Run Keyword If    True    Call Method    ${chrome_options}    to_capabilities
-    Open Browser    https://stg.innisfree.cn/Main.do?ref=2    chrome    desired_capabilities=${options}
-    浏览器最大化
-    Set Selenium Implicit Wait    5
-    Set Selenium Speed    0.5
-    PC端关闭页面提示信息
-    聚焦    class=login
-    等待    1
-    Execute Javascript    document.getElementsByClassName("login").click;
-    等待    0.5
-    点击元素    link=登录
-    输入    id=email    18850369373
-    输入    id=pwd    qwe123
-    点击元素    css=#login > img
-    设置执行速度    0.5
+    Comment    Comment    配置 headless 启动方式
+    Comment    ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Comment    Call Method    ${chrome_options}    add_argument    headless
+    Comment    Call Method    ${chrome_options}    add_argument    disable-gpu
+    Comment    Comment    Call Method    ${chrome_options}    add_argument    no-sandbox
+    Comment    ${options}    Run Keyword If    True    Call Method    ${chrome_options}    to_capabilities
+    Comment    Open Browser    https://stg.innisfree.cn/Main.do?ref=2    chrome    desired_capabilities=${options}
+    Comment    浏览器最大化
+    Comment    Set Selenium Implicit Wait    5
+    Comment    Set Selenium Speed    0.5
+    Comment    PC端关闭页面提示信息
+    Comment    聚焦    class=login
+    Comment    等待    1
+    Comment    Execute Javascript    document.getElementsByClassName("login").click;
+    Comment    等待    0.5
+    Comment    点击元素    link=登录
+    Comment    输入    id=email    18850369373
+    Comment    输入    id=pwd    qwe123
+    Comment    点击元素    css=#login > img
+    Comment    设置执行速度    0.5
 
 0003_验证后台订单
     Comment    Comment    登陆innisfree后台    ${后台地址}    Markr    q1w2e3r4

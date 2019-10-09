@@ -136,7 +136,7 @@ headless_登陆innisfree
     ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    headless
     Call Method    ${chrome_options}    add_argument    disable-gpu
-    Comment    Call Method    ${chrome_options}    add_argument    no-sandbox
+    Call Method    ${chrome_options}    add_argument    no-sandbox
     ${options}    Run Keyword If    True    Call Method    ${chrome_options}    to_capabilities
     Open Browser    ${url}    chrome    desired_capabilities=${options}
     浏览器最大化
