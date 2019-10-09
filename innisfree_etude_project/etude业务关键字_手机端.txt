@@ -31,6 +31,7 @@ Resource          基础关键字.txt
 
 获取手机端各类型订单数量
     [Arguments]    ${order_type}
+    等待    2
     点击元素    xpath=//p[text()="我的伊蒂"]
     ${num}    Get Text    xpath=//span[text()="${order_type}"]/preceding-sibling::div/span
     [Return]    ${num}
