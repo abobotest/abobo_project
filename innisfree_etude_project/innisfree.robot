@@ -11,8 +11,8 @@ ${后台地址}           https://stg.innisfree.cn/AdmLogin.do
 
 *** Test Cases ***
 0001_下单
-    登陆innisfree    ${测试环境}    18850369373    qwe123
-    Comment    headless_登陆innisfree    ${测试环境}    18850369373    qwe123
+    Comment    登陆innisfree    ${测试环境}    18850369373    qwe123
+    headless_登陆innisfree    ${测试环境}    18850369373    qwe123
     清空购物车
     ${old_number}    获取我的订单中各类型订单总数    待付款    #获取全部订单的数量
     Comment    log    ${old_number}
