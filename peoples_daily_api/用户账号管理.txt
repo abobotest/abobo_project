@@ -1,0 +1,159 @@
+*** Settings ***
+Library           RequestsLibrary
+Library           XML
+Library           json
+Library           OperatingSystem
+
+*** Variables ***
+&{无效值-提供参考}       authorization=Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMjEwMTMsInVzZXJfbmFtZSI6ImFib2JvX2dhZ2EiLCJqdGkiOiI3YmZmOTJjNy1iOWQyLTRlMWQtYjRiMy1mOTc5NGQ4ZjZhM2MiLCJjbGllbnRfaWQiOiJjbGllbnQxIiwic2NvcGUiOlsiYWxsIl19.aylDQ9vU9ELH-y-HCVWRMDhg2f6vdHEeDPRiIHJYVLe-UTGMo2yNCK7_2RAJNK2VWhKKFPWR9gCArot867A_fvVEwiPmuBwoXCcEkCk5LYarf33LS5X2VF5OfwDHs7YyUu_5-kbZ7pZWpJzqvKLv-6n13nPjEpiqCksaVYcijw8FD5ywzk49-R6Lgzk0NuJddSN1YbwoUUuXwsde7pmbWYEoTcWp2zCM1GqQNR2ErBdm33NA3atO2ieMGLzibu7qpIxFqeUW2Gwi06xqh-O9i5lAYd-VMab7alrPYGYswpMYXaovzy-igPMsjgBTqTNLUyDQIb2IWPdinvfnYp5vVQ
+
+*** Keywords ***
+login
+    &{data}    Create Dictionary    username=abobo_gaga    password=63d835ed02ba77d775097e0dcda3f577
+    &{myheader}    Create Dictionary    Content-Type=application/json    Postman-Token=c0e736a2-6be1-48f3-8394-a65727b69c18
+    ${postdata}    json.Dumps    ${data}
+    Create Session    Demo    http://idp.ams.bespinglobal.cn/api
+    ${resp}    Post Request    Demo    auth/login    data=${postdata}    headers=&{myheader}
+    log    ${resp.text}
+    &{out}    To Json    ${resp.text}
+    log    ${out.success}
+
+test
+    log    ${token}
+
+查询角色分类列表
+    &{myheader}    Create Dictionary    authorization    ${token}
+    ${resp}    Get Request    ${session}    /iam/roleCatalogs    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    Comment    log    ${out.success}
+    Comment    log    ${out.result.data[0].name}
+    Comment    Should Be Equal As Strings    True    ${out.success}
+    [Return]    &{out}    # 返回JSON
+
+查询角色列表
+    &{myheader}    Create Dictionary    authorization    ${token}
+    ${resp}    Get Request    ${session}    /iam/roles    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+创建角色
+    [Arguments]    ${name}    ${regionId}    ${catalogId}    ${tempIds}
+    [Documentation]    name \ 节点名称,
+    ...    regionId 域Id,
+    ...    catalogId 分类Id,
+    ...    tempIds 访问策略编号数组
+    &{data}    Create Dictionary    name=${name}    regionId=${regionId}    catalogId=${catalogId}    tempIds=${tempIds}
+    &{myheader}    Create Dictionary    Content-Type=application/json    authorization=${token}
+    ${postdata}    json.Dumps    ${data}
+    ${resp}    Post Request    ${session}    iam/role    data=${postdata}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+更新角色
+    [Arguments]    ${name}    ${catalogId}    ${tempIds}    ${id}
+    &{data}    Create Dictionary    name=${name}    catalogId=${catalogId}    tempIds=${tempIds}
+    &{myheader}    Create Dictionary    Content-Type=application/json    authorization=${token}
+    ${postdata}    json.Dumps    ${data}
+    ${resp}    Put Request    ${session}    iam/role/${id}    data=${postdata}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+查询角色
+    [Arguments]    ${id}
+    &{myheader}    Create Dictionary    authorization=${token}
+    ${resp}    Get Request    ${session}    /iam/role/${id}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+删除角色
+    [Arguments]    ${id}
+    &{myheader}    Create Dictionary    authorization=${token}
+    ${resp}    Delete Request    ${session}    /iam/role/${id}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    ${out}
+
+创建模板分类
+    [Arguments]    ${name}    ${roleCatalogId}
+    [Documentation]    name为模板名称，roleCatalogId为角色分类ID
+    &{data}    Create Dictionary    name=${name}    roleCatalogId=${roleCatalogId}
+    &{myheader}    Create Dictionary    Content-Type=application/json    authorization=${token}
+    ${postdata}    json.Dumps    ${data}
+    ${resp}    Post Request    ${session}    iam/policyCatalog    data=${postdata}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+查询模板分类列表
+    &{myheader}    Create Dictionary    authorization    ${token}
+    ${resp}    Get Request    ${session}    /iam/policyCatalogs    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+更新模板分类
+    [Arguments]    ${name}    ${roleCatalogId}    ${id}
+    &{data}    Create Dictionary    name=${name}    roleCatalogId=${roleCatalogId}
+    &{myheader}    Create Dictionary    Content-Type=application/json    authorization=${token}
+    ${postdata}    json.Dumps    ${data}
+    ${resp}    Put Request    ${session}    /iam/policyCatalog/${id}    data=${postdata}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+查询模板分类
+    [Arguments]    ${id}
+    &{myheader}    Create Dictionary    authorization=${token}
+    ${resp}    Get Request    ${session}    /iam/policyCatalog/${id}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+删除模板分类
+    [Arguments]    ${id}
+    &{myheader}    Create Dictionary    authorization=${token}
+    ${resp}    Delete Request    ${session}    /iam/policyCatalog/${id}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+查询模板列表
+    &{myheader}    Create Dictionary    authorization    ${token}
+    ${resp}    Get Request    ${session}    /iam/policyTemplates    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+查询模板
+    [Arguments]    ${id}
+    &{myheader}    Create Dictionary    authorization=${token}
+    ${resp}    Get Request    ${session}    /iam/policyTemplete/${id}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+创建模板
+    [Arguments]    ${name}    ${catalogId}    ${policy}
+    [Documentation]    name 模板名字，catalogId 模板分类ID，policy 策略脚本 例：{
+    ...     \ \ "ver":1,
+    ...     \ "policys":[{
+    ...     \ \ \ \ "Effect":"Allow",
+    ...     \ \ \ "Action":[*:*],
+    ...     \ \ "Resource":[*]
+    ...    }]
+    ...    }
+    &{data}    Create Dictionary    name=${name}    catalogId=${catalogId}    policy=${policy}
+    &{myheader}    Create Dictionary    Content-Type=application/json    authorization=${token}
+    ${postdata}    json.Dumps    ${data}
+    ${resp}    Post Request    ${session}    /iam/policyTemplete    data=${postdata}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+更新模板
+    [Arguments]    ${name}    ${catalogId}    ${policy}    ${policyType}    ${id}
+    [Documentation]    name 名称，policy 策略脚本，catalogId 策略分类ID，policyType 策略类型，id 模板ID以上5个为必输项，descs 描述
+    &{data}    Create Dictionary    name=${name}    catalogId=${catalogId}    policy=${policy    policyType=${policyType}
+    &{myheader}    Create Dictionary    Content-Type=application/json    authorization=${token}
+    ${postdata}    json.Dumps    ${data}
+    ${resp}    Put Request    ${session}    /iam/policyTemplete/${id}    data=${postdata}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}
+
+删除模板
+    [Arguments]    ${id}
+    &{myheader}    Create Dictionary    authorization=${token}
+    ${resp}    Delete Request    ${session}    /iam/policyTemplete/${id}    headers=&{myheader}
+    &{out}    To Json    ${resp.text}
+    [Return]    &{out}

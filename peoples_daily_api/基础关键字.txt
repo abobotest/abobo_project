@@ -1,0 +1,12 @@
+*** Settings ***
+Library           MyLib.py
+Library           RequestsLibrary
+Library           json
+
+*** Keywords ***
+get_config
+    ${my_token}    Get Token
+    Create Session    session    ${base_url}
+    Comment    Set Suite Variable
+    set suite variable    ${token}    ${my_token}
+    set suite variable    ${session}    session
