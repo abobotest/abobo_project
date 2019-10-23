@@ -1,4 +1,5 @@
-#--outputdir
+﻿#--outputdir
+#abobo
 #D:\abobo_project\robot_project\test\report
 #--variablefile
 #D:\abobo_project\robot_project\test\test1.py
